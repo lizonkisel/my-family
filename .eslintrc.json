@@ -37,6 +37,7 @@
               "ts": "never",
               "tsx": "never"
             }
-         ]
+        ],
+        "indent": ["error", 2]
     }
 }
