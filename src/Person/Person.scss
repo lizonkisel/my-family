@@ -1,0 +1,39 @@
+.person {
+  width: 268px;
+
+  border-radius: 60px;
+  background-color: #FCE9CC;
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+.person__image {
+
+}
+
+.outer {
+  mask-image: url('../img/bubble.png');
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  // mask-size: 70%;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  height: 246px;
+  // width: 268px;
+}
+
+.outer img {
+  height: 246px;
+  width: 268px;
+}
+
+.person__name {
+}
+
+.person__date {
+
+}
+
