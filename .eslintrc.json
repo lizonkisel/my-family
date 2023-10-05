@@ -38,6 +38,7 @@
               "tsx": "never"
             }
         ],
-        "indent": ["error", 2]
+        "indent": ["error", 2],
+        "react/require-default-props": "off"
     }
 }
