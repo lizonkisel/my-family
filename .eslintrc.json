@@ -39,6 +39,8 @@
             }
         ],
         "indent": ["error", 2],
-        "react/require-default-props": "off"
+        "react/require-default-props": "off",
+        "react/jsx-props-no-spreading": "off",
+        "@typescript-eslint/no-explicit-any": "off"
     }
 }

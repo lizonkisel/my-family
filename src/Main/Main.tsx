@@ -1,11 +1,13 @@
 import React from "react";
 import "./Main.css";
-import Person from "../Person/Person";
+
+import { Component } from "../Canvas/Canvas";
+// import Board from "../Board/Board";
 
 function Main() {
   return (
     <main className="main">
-      <Person />
+      <Component />
     </main>
   );
 }
