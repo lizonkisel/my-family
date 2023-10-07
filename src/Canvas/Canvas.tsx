@@ -32,18 +32,20 @@ function Controls({ zoomIn, zoomOut, resetTransform }: Test) {
 function Component() {
   const transformComponentRef = useRef<ReactZoomPanPinchRef | null>(null);
 
-  const zoomToImage = () => {
-    if (transformComponentRef.current) {
-      const { zoomToElement } = transformComponentRef.current;
-      zoomToElement("imgExample");
-    }
-  };
+  // const zoomToImage = () => {
+  //   if (transformComponentRef.current) {
+  //     const { zoomToElement } = transformComponentRef.current;
+  //     zoomToElement("imgExample");
+  //   }
+  // };
 
   return (
     <TransformWrapper
-      initialScale={1}
+      initialScale={0.25}
       initialPositionX={200}
       initialPositionY={100}
+      minScale={0.25}
+      centerOnInit
       ref={transformComponentRef}
     >
       {(utils) => (
@@ -52,7 +54,7 @@ function Component() {
           <TransformComponent>
             <Board />
             {/* eslint-disable-next-line */}
-            <div onClick={zoomToImage}>Example text</div>
+            {/* <div onClick={zoomToImage}>Example text</div> */}
           </TransformComponent>
         </>
       )}
