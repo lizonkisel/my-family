@@ -10,8 +10,6 @@ interface IPerson {
   isConnectable?: any;
 }
 
-const handleStyle = { left: 10 };
-
 function NodePerson({
   imageLink = "https://www.coloradospecialties.com/wp-content/uploads/2013/12/Person.Ashley.jpg",
   name = "Иван Иванович Иванов",
@@ -23,6 +21,7 @@ function NodePerson({
     <div>
       <Handle
         type="target"
+        isConnectableStart={false}
         position={Position.Top}
         isConnectable={isConnectable}
       />
@@ -31,13 +30,6 @@ function NodePerson({
         <span className="person__name">{name}</span>
         <span className="person__date">{date}</span>
       </section>
-      <Handle
-        type="source"
-        position={Position.Bottom}
-        id="a"
-        style={handleStyle}
-        isConnectable={isConnectable}
-      />
       <Handle
         type="source"
         position={Position.Bottom}
