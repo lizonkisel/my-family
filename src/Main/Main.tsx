@@ -25,13 +25,22 @@ const initialNodes = [
     data: { value: 123 }
   }
 ];
+
+const initialEdges = [
+  {
+    id: "e1-2",
+    source: "node-1",
+    target: "node-2"
+  }
+  // { id: "e2-3", source: "2", target: "3", animated: true },
+];
 // we define the nodeTypes outside of the component to prevent re-renderings
 // you could also use useMemo inside the component
 const nodeTypes = { textUpdater: NodePerson };
 
 function Main() {
   const [nodes, setNodes] = useState(initialNodes);
-  const [edges, setEdges] = useState([]);
+  const [edges, setEdges] = useState(initialEdges);
 
   const onNodesChange = useCallback(
     /* eslint-disable-next-line */
