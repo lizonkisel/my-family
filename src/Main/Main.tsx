@@ -1,13 +1,69 @@
-import React from "react";
-import "./Main.css";
+import React, { useCallback, useState } from "react";
+import ReactFlow, {
+  addEdge,
+  applyEdgeChanges,
+  applyNodeChanges
+} from "reactflow";
+import "reactflow/dist/style.css";
 
-import { Component } from "../Canvas/Canvas";
-// import Board from "../Board/Board";
+import "./Main.css";
+import "../Person/Person.scss";
+
+import NodePerson from "../Person/NodePerson";
+
+const initialNodes = [
+  {
+    id: "node-1",
+    type: "textUpdater",
+    position: { x: 0, y: 0 },
+    data: { value: 123 }
+  },
+  {
+    id: "node-2",
+    type: "textUpdater",
+    position: { x: 200, y: 200 },
+    data: { value: 123 }
+  }
+];
+// we define the nodeTypes outside of the component to prevent re-renderings
+// you could also use useMemo inside the component
+const nodeTypes = { textUpdater: NodePerson };
 
 function Main() {
+  const [nodes, setNodes] = useState(initialNodes);
+  const [edges, setEdges] = useState([]);
+
+  const onNodesChange = useCallback(
+    /* eslint-disable-next-line */
+    // @ts-ignore
+    (changes: any) => setNodes((nds) => applyNodeChanges(changes, nds)),
+    [setNodes]
+  );
+  const onEdgesChange = useCallback(
+    /* eslint-disable-next-line */
+    // @ts-ignore
+    (changes: any) => setEdges((eds) => applyEdgeChanges(changes, eds)),
+    [setEdges]
+  );
+  const onConnect = useCallback(
+    /* eslint-disable-next-line */
+    // @ts-ignore
+    (connection: any) => setEdges((eds) => addEdge(connection, eds)),
+    [setEdges]
+  );
+
   return (
-    <main className="main">
-      <Component />
+    <main className="main" style={{ width: "100vw", height: "100vh" }}>
+      <ReactFlow
+        nodes={nodes}
+        edges={edges}
+        onNodesChange={onNodesChange}
+        onEdgesChange={onEdgesChange}
+        onConnect={onConnect}
+        nodeTypes={nodeTypes}
+        fitView
+        // style={rfStyle}
+      />
     </main>
   );
 }
