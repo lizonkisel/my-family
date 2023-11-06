@@ -1,13 +1,12 @@
 import React from "react";
-import "./Main.css";
 
-import { Component } from "../Canvas/Canvas";
-// import Board from "../Board/Board";
+import "./Main.css";
+import FlowBoard from "../FlowBoard/FlowBoard";
 
 function Main() {
   return (
     <main className="main">
-      <Component />
+      <FlowBoard />
     </main>
   );
 }
