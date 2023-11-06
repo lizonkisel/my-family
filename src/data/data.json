@@ -2,9 +2,39 @@
   "name": "Елизавета",
   "patronymic": "Евгеньевна",
   "surname": "Юновидова",
+  "generation": 1,
   "firstSurname": "Сидорова",
   "gender": "female",
   "date_of_birth": "08.07.1998",
+  "date_of_death": null,
+  "children": [
+    {
+
+    },
+    {
+
+    }
+  ],
+  "parents": [
+    {
+
+    },
+    {
+
+    }
+  ],
+  "partner": {
+
+  }
+}
+
+{
+  "name": "Дмитрий",
+  "patronymic": "Валерьевич",
+  "surname": "Юновидов",
+  "generation": 1,
+  "gender": "male",
+  "date_of_birth": "19.11.1988",
   "date_of_death": null,
   "children": [
     {
