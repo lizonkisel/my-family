@@ -10,8 +10,8 @@ import "../Person/Person.scss";
 
 import NodePerson from "../Person/NodePerson";
 
-// import data from "../data/data.json";
-import { addIds } from "../utils/utils";
+import data from "../data/data.json";
+import { createInitialNodes } from "../utils/utils";
 
 // const initialNodes = [
 //   {
@@ -27,31 +27,67 @@ import { addIds } from "../utils/utils";
 //     data: { value: 123 }
 //   }
 // ];
-const personsWithIds = addIds();
 
-const createNodes = (testData: any) => {
-  const nodes = testData.map((node: any) => {
-    let dateOfDeath;
-    if (node.date_of_death === null) {
-      dateOfDeath = "н.в.";
-    } else {
-      dateOfDeath = node.date_of_death;
-    }
-    return {
-      id: `node-${node.id}`,
-      type: "textUpdater",
-      position: { x: 0, y: 0 },
-      data: {
-        personName: `${node.name} ${node.patronymic} ${node.surname}`,
-        date: `${node.date_of_birth} - ${dateOfDeath}`
-      }
-    };
-  });
-  return nodes;
-};
+// const createNodes = (testData: any) => {
+//   const nodes = testData.map((node: any) => {
+//     let dateOfDeath;
+//     if (node.date_of_death === null) {
+//       dateOfDeath = "н.в.";
+//     } else {
+//       dateOfDeath = node.date_of_death;
+//     }
+
+//     // const coordinates = getCoordinates(node.generation, node.id);
+
+//     let xCoor;
+//     if (node.generation === 1) {
+//       xCoor = 200;
+//     } else if (node.generation === 2) {
+//       xCoor = 400;
+//     }
+
+//     return {
+//       id: `node-${node.id}`,
+//       type: "textUpdater",
+//       position: { x: xCoor, y: 100 },
+//       // position: coordinates,
+//       data: {
+//         personName: `${node.name} ${node.patronymic} ${node.surname}`,
+//         date: `${node.date_of_birth} - ${dateOfDeath}`
+//       }
+//     };
+//   });
+//   return nodes;
+// };
+
+// const createFinalNodes = (someData: any) => {
+//   const preData = createInitialNodes(someData);
+//   const nodes = preData.map((node: any) => {
+//     let dateOfDeath;
+//     if (node.date_of_death === null) {
+//       dateOfDeath = "н.в.";
+//     } else {
+//       dateOfDeath = node.date_of_death;
+//     }
+//     return {
+//       // id: `node-${node.id}`,
+//       type: "textUpdater",
+//       // position: { x: xCoor, y: 100 },
+//       position: node.position,
+//       data: {
+//         personName: `${node.name} ${node.patronymic} ${node.surname}`,
+//         date: `${node.date_of_birth} - ${dateOfDeath}`
+//       }
+//     };
+//   });
+//   return nodes;
+// };
 
 // const initialNodes = createNodes(data);
-const initialNodes = createNodes(personsWithIds);
+// const initialNodes = createNodes(personsWithIds);
+const initialNodes = createInitialNodes(data);
+
+// const initialNodes = createFinalNodes(data);
 
 const initialEdges = [
   {
