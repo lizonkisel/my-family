@@ -10,7 +10,8 @@ import "../Person/Person.scss";
 
 import NodePerson from "../Person/NodePerson";
 
-import data from "../data/data.json";
+// import data from "../data/data.json";
+import { addIds } from "../utils/utils";
 
 // const initialNodes = [
 //   {
@@ -26,6 +27,7 @@ import data from "../data/data.json";
 //     data: { value: 123 }
 //   }
 // ];
+const personsWithIds = addIds();
 
 const createNodes = (testData: any) => {
   const nodes = testData.map((node: any) => {
@@ -48,7 +50,8 @@ const createNodes = (testData: any) => {
   return nodes;
 };
 
-const initialNodes = createNodes(data);
+// const initialNodes = createNodes(data);
+const initialNodes = createNodes(personsWithIds);
 
 const initialEdges = [
   {
