@@ -87,6 +87,7 @@ import { createInitialNodes } from "../utils/utils";
 // const initialNodes = createNodes(personsWithIds);
 const initialNodes = createInitialNodes(data);
 
+console.log(initialNodes);
 // const initialNodes = createFinalNodes(data);
 
 const initialEdges = [

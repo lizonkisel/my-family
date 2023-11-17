@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": 0,
     "name": "Юрий",
     "patronymic": "Дмитриевич",
     "surname": "Юновидов",
@@ -9,12 +9,13 @@
     "date_of_birth": "06.03.2023",
     "date_of_death": null,
     "children": [],
-    "parents": [3, 4],
-    "partner": []
+    "parents": [2, 3],
+    "partner": [],
+    "line": "main"
   },
 
   {
-    "id": 2,
+    "id": 1,
     "name": "Валерий",
     "patronymic": "Дмитриевич",
     "surname": "Юновидов",
@@ -23,12 +24,13 @@
     "date_of_birth": "02.02.2012",
     "date_of_death": null,
     "children": [],
-    "parents": [4],
-    "partner": []
+    "parents": [2, 3],
+    "partner": [],
+    "line": "main"
   },
 
   {
-    "id": 3,
+    "id": 2,
     "name": "Елизавета",
     "patronymic": "Евгеньевна",
     "surname": "Юновидова",
@@ -37,13 +39,14 @@
     "gender": "female",
     "date_of_birth": "08.07.1998",
     "date_of_death": null,
-    "children": [1],
+    "children": [0, 1],
     "parents": [ ],
-    "partner": [4]
+    "partner": [3],
+    "line": "main"
   },
 
   {
-    "id": 4,
+    "id": 3,
     "name": "Дмитрий",
     "patronymic": "Валерьевич",
     "surname": "Юновидов",
@@ -51,13 +54,14 @@
     "gender": "male",
     "date_of_birth": "19.11.1988",
     "date_of_death": null,
-    "children": [1, 2],
+    "children": [0, 1],
     "parents": [ ],
-    "partner": [4]
+    "partner": [2],
+    "line": "main"
   },
 
   {
-    "id": 5,
+    "id": 4,
     "name": "Михаил",
     "patronymic": "Евгеньевич",
     "surname": "Сидоров",
@@ -66,12 +70,13 @@
     "date_of_birth": "10.04.2007",
     "date_of_death": null,
     "children": [],
-    "parents": [6, 7],
-    "partner": []
+    "parents": [5, 6],
+    "partner": [],
+    "line": "main"
   },
 
   {
-    "id": 6,
+    "id": 5,
     "name": "Алла",
     "patronymic": "Вячеславовна",
     "surname": "Сидорова",
@@ -80,13 +85,14 @@
     "gender": "female",
     "date_of_birth": "26.06.1971",
     "date_of_death": null,
-    "children": [3, 5],
+    "children": [2, 4],
     "parents": [],
-    "partner": [7]
+    "partner": [6],
+    "line": "main"
   },
 
   {
-    "id": 7,
+    "id": 6,
     "name": "Евгений",
     "patronymic": "Юрьевич",
     "surname": "Сидоров",
@@ -94,13 +100,14 @@
     "gender": "male",
     "date_of_birth": "15.12.1970",
     "date_of_death": null,
-    "children": [3, 5],
+    "children": [2, 4],
     "parents": [],
-    "partner": [6]
+    "partner": [5],
+    "line": "main"
   },
 
   {
-    "id": 8,
+    "id": 7,
     "name": "Нина",
     "patronymic": "Георгиевна",
     "surname": "Кузнецова",
@@ -109,13 +116,14 @@
     "gender": "female",
     "date_of_birth": "06.02.1941",
     "date_of_death": null,
-    "children": [],
+    "children": [5],
     "parents": [],
-    "partner": [9]
+    "partner": [8],
+    "line": "main"
   },
 
   {
-    "id": 9,
+    "id": 8,
     "name": "Вячеслав",
     "patronymic": "Евгеньевич",
     "surname": "Кузнецов",
@@ -124,13 +132,14 @@
     "gender": "male",
     "date_of_birth": "10.10.1939",
     "date_of_death": "09.05.1985",
-    "children": [],
+    "children": [5],
     "parents": [],
-    "partner": [8]
+    "partner": [7],
+    "line": "main"
   },
 
   {
-    "id":10,
+    "id": 9,
     "name": "Мария",
     "patronymic": "Алексеевна",
     "surname": "Сидорова",
@@ -139,13 +148,14 @@
     "gender": "female",
     "date_of_birth": "узнать",
     "date_of_death": "узнать",
-    "children": [7],
+    "children": [6],
     "parents": [],
-    "partner": [11]
+    "partner": [10],
+    "line": "main"
   },
 
   {
-    "id": 11,
+    "id": 10,
     "name": "Юрий",
     "patronymic": "Константинович",
     "surname": "Сидоров",
@@ -153,13 +163,14 @@
     "gender": "male",
     "date_of_birth": "узнать",
     "date_of_death": "узнать",
-    "children": [7],
+    "children": [6],
     "parents": [],
-    "partner": [10]
+    "partner": [9],
+    "line": "main"
   },
 
   {
-    "id": 12,
+    "id": 11,
     "name": "Анна",
     "patronymic": "Николаевна",
     "surname": "Петрова",
@@ -168,13 +179,14 @@
     "gender": "female",
     "date_of_birth": "28.05.1917",
     "date_of_death": "13.08.2006",
-    "children": [],
+    "children": [7],
     "parents": [],
-    "partner": [13]
+    "partner": [12],
+    "line": "main"
   },
 
   {
-    "id": 13,
+    "id": 12,
     "name": "Георгий",
     "patronymic": "Алексеевич",
     "surname": "Петров",
@@ -183,13 +195,14 @@
     "gender": "male",
     "date_of_birth": "16.01.1910",
     "date_of_death": "05.06.1980",
-    "children": [],
+    "children": [7],
     "parents": [],
-    "partner": [12]
+    "partner": [11],
+    "line": "main"
   },
 
   {
-    "id": 14,
+    "id": 13,
     "name": "Наталия",
     "patronymic": "узнать",
     "surname": "Шерстобитова",
@@ -198,13 +211,14 @@
     "gender": "female",
     "date_of_birth": "узнать",
     "date_of_death": "узнать",
-    "children": [],
+    "children": [8],
     "parents": [],
-    "partner": [16]
+    "partner": [15],
+    "line": "main"
   },
 
   {
-    "id": 15,
+    "id": 14,
     "name": "Мать тёти Нелли",
     "patronymic": "узнать",
     "surname": "узнать",
@@ -215,11 +229,12 @@
     "date_of_death": "узнать",
     "children": [],
     "parents": [],
-    "partner": [16]
+    "partner": [15],
+    "line": "main"
   },
 
   {
-    "id": 16,
+    "id": 15,
     "name": "Евгений",
     "patronymic": "Александрович",
     "surname": "Кузнецов",
@@ -228,15 +243,16 @@
     "gender": "male",
     "date_of_birth": "узнать",
     "date_of_death": "узнать",
-    "children": [],
+    "children": [8],
     "parents": [],
-    "partner": [14, 15]
+    "partner": [13, 14],
+    "line": "main"
   },
 
 
 
   {
-    "id": 17,
+    "id": 16,
     "name": "Мать бабы Маши",
     "patronymic": "узнать",
     "surname": "узнать",
@@ -245,13 +261,14 @@
     "gender": "female",
     "date_of_birth": "узнать",
     "date_of_death": "узнать",
-    "children": [],
+    "children": [9],
     "parents": [],
-    "partner": [18]
+    "partner": [17],
+    "line": "main"
   },
 
   {
-    "id": 18,
+    "id": 17,
     "name": "Отец бабы Маши",
     "patronymic": "узнать",
     "surname": "узнать",
@@ -259,13 +276,14 @@
     "gender": "male",
     "date_of_birth": "узнать",
     "date_of_death": "узнать",
-    "children": [],
+    "children": [9],
     "parents": [],
-    "partner": [17]
+    "partner": [16],
+    "line": "main"
   },
 
   {
-    "id": 19,
+    "id": 18,
     "name": "Мать деда Юры",
     "patronymic": "узнать",
     "surname": "узнать",
@@ -274,13 +292,14 @@
     "gender": "female",
     "date_of_birth": "узнать",
     "date_of_death": "узнать",
-    "children": [],
+    "children": [10],
     "parents": [],
-    "partner": [20]
+    "partner": [19],
+    "line": "main"
   },
 
   {
-    "id": 20,
+    "id": 19,
     "name": "Константин",
     "patronymic": "узнать",
     "surname": "Сидоров",
@@ -288,13 +307,14 @@
     "gender": "male",
     "date_of_birth": "узнать",
     "date_of_death": "узнать",
-    "children": [],
+    "children": [10],
     "parents": [],
-    "partner": [19]
+    "partner": [18],
+    "line": "main"
   },
 
   {
-    "id": 21,
+    "id": 20,
     "name": "Мама Нюрочки",
     "patronymic": "узнать",
     "surname": "Козлова",
@@ -303,13 +323,14 @@
     "gender": "female",
     "date_of_birth": "узнать",
     "date_of_death": "узнать",
-    "children": [],
+    "children": [11],
     "parents": [],
-    "partner": [22]
+    "partner": [21],
+    "line": "main"
   },
 
   {
-    "id": 22,
+    "id": 21,
     "name": "Николай",
     "patronymic": "узнать",
     "surname": "Козлов",
@@ -318,13 +339,14 @@
     "gender": "male",
     "date_of_birth": "узнать",
     "date_of_death": "узнать",
-    "children": [],
+    "children": [11],
     "parents": [],
-    "partner": [21]
+    "partner": [20],
+    "line": "main"
   },
 
   {
-    "id": 23,
+    "id": 22,
     "name": "Афанасия",
     "patronymic": "Максимовна",
     "surname": "Петрова",
@@ -333,13 +355,14 @@
     "gender": "female",
     "date_of_birth": "приблизительно 1877",
     "date_of_death": "27.10.1949",
-    "children": [],
+    "children": [12],
     "parents": [],
-    "partner": [24]
+    "partner": [23],
+    "line": "main"
   },
 
   {
-    "id": 24,
+    "id": 23,
     "name": "Алексей",
     "patronymic": "Степанович",
     "surname": "Петров",
@@ -348,8 +371,9 @@
     "gender": "male",
     "date_of_birth": "приблизительно 1870",
     "date_of_death": "03.02.1942",
-    "children": [],
+    "children": [12],
     "parents": [],
-    "partner": [23]
+    "partner": [22],
+    "line": "main"
   }
 ]
