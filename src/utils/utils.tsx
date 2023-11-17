@@ -50,8 +50,23 @@ const addCoordinates = (data: any) => {
     const line = getLine(data[i]);
     const partnerId = data[i].partner[0];
     const partnerPerson = data[partnerId];
-    const firstChildId = data[i].children[0];
-    const firstChildPerson = data[firstChildId];
+
+    let xPos;
+    if (neededNodes.length === 0) {
+      xPos = 0;
+    } else {
+      console.log(data[i].children[0]);
+      const firstChildId = data[i].children[0] || 0;
+      // const firstChildPerson = data[firstChildId];
+      const firstChildXPos: any = neededNodes[firstChildId].position.x;
+      console.log(firstChildXPos);
+      console.log(`${data[i]} + ${firstChildXPos}`);
+      if (data[i].gender === "female") {
+        xPos = firstChildXPos - 450;
+      } else {
+        xPos = firstChildXPos + 100;
+      }
+    }
 
     // const additionalXMoving = getAdditionalXMoving(data[i]);
 
@@ -62,15 +77,20 @@ const addCoordinates = (data: any) => {
       data: {
         personName: `${data[i].name} ${data[i].patronymic} ${data[i].surname}`,
         date: `${data[i].date_of_birth} - ${dateOfDeath}`,
-        partner: partnerPerson,
-        firstChild: firstChildPerson
+        partner: partnerPerson
+        // firstChild: firstChildPerson
       },
       /* eslint-disable-next-line */
       // position: { x: data[i].generation * 100 + data[i].id * 50, y: data[i].generation * 200 }
-      position: { x: line * 100, y: data[i].generation * 400 }
+      position: {
+        x: line * 100 + data[i].generation * 100 + xPos * 1,
+        y: data[i].generation * 400
+      }
     };
     neededNodes.push(neededNode);
   }
+
+  console.log(neededNodes);
 
   return neededNodes;
 
