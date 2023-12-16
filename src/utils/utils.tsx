@@ -50,7 +50,11 @@ const addCoordinates = (data: any) => {
     const line = getLine(data[i]);
     const partnerId = data[i].partner[0];
     const partnerPerson = data[partnerId];
-    const gen = data[i].generation;
+    let gen = data[i].generation;
+
+    if (gen === 0) {
+      gen = 0.1;
+    }
 
     let xPos;
     if (neededNodes.length === 0) {
@@ -80,7 +84,6 @@ const addCoordinates = (data: any) => {
 
     // const additionalXMoving = getAdditionalXMoving(data[i]);
 
-    console.log(line * 100 + (1 / gen) * 100 + xPos * 1);
     const neededNode: any = {
       id: `node-${data[i].id}`,
       type: "textUpdater",
@@ -94,7 +97,7 @@ const addCoordinates = (data: any) => {
       /* eslint-disable-next-line */
       // position: { x: data[i].generation * 100 + data[i].id * 50, y: data[i].generation * 200 }
       position: {
-        x: line * 100 + gen * 100 + xPos * 1,
+        x: line * 100 + (1 / gen) * 100 + xPos * 1,
         y: gen * 400
       }
     };
