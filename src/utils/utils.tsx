@@ -14,22 +14,22 @@
 //   return data;
 // };
 
-const getLine = (node: any) => {
-  let line;
-  switch (node.line) {
-  /* eslint-disable */
-  case "main":
-    line = 0;
-    break;
-  case "second":
-  line = 1;
-    break;
-  default:
-    line = 0;
-  }
-  /* eslint-enable */
-  return line;
-};
+// const getLine = (node: any) => {
+//   let line;
+//   switch (node.line) {
+//   /* eslint-disable */
+//   case "main":
+//     line = 0;
+//     break;
+//   case "second":
+//   line = 1;
+//     break;
+//   default:
+//     line = 0;
+//   }
+//   /* eslint-enable */
+//   return line;
+// };
 
 // const getAdditionalXMoving = (node: any) => {
 //   /* eslint-disable-next-line */
@@ -39,7 +39,7 @@ const getLine = (node: any) => {
 const addCoordinates = (data: any) => {
   const neededNodes = [];
   /* eslint-disable-next-line */
-  for (let i = 0; i < data.length - 1; i++) {
+  for (let i = 0; i < data.length; i++) {
     let dateOfDeath;
     if (data[i].date_of_death === null) {
       dateOfDeath = "н.в.";
@@ -47,13 +47,13 @@ const addCoordinates = (data: any) => {
       dateOfDeath = data[i].date_of_death;
     }
 
-    const line = getLine(data[i]);
+    // const line = getLine(data[i]);
     const partnerId = data[i].partner[0];
     const partnerPerson = data[partnerId];
     let gen = data[i].generation;
 
     if (gen === 0) {
-      gen = 0.1;
+      gen = 0.9;
     }
 
     let xPos;
@@ -61,7 +61,17 @@ const addCoordinates = (data: any) => {
       xPos = 0;
     } else {
       let firstChildXPos;
-      const firstChildId = data[i].children[0] || "no child";
+      let firstChildId;
+
+      /* eslint-disable-next-line */
+      firstChildId = data[i].children[0];
+      if (firstChildId === undefined) {
+        firstChildId = "no child";
+      }
+
+      console.log(data[i].name);
+      console.log(firstChildId);
+      console.log(data[i].children[0]);
 
       if (firstChildId === "no child") {
         firstChildXPos = 0;
@@ -69,18 +79,27 @@ const addCoordinates = (data: any) => {
         firstChildXPos = Math.round(neededNodes[firstChildId].position.x);
       }
 
-      // const firstChildPerson = data[firstChildId];
-      console.log(`firstChildXPos: ${firstChildXPos}`);
-      if (data[i].gender === "female") {
-        xPos = firstChildXPos - 450;
+      /* eslint-disable-next-line */
+      if (data[i].gender === "female" && firstChildId !== "no child" && data[firstChildId].gender === "male") {
+        xPos = firstChildXPos - 100;
+        console.log(`${data[i].name} + ${data[i].surname} мать мальчика`);
+      } else if (data[i].gender === "female") {
+        xPos = firstChildXPos - 1500 + gen * 200;
+        console.log(data[i].name + data[i].surname + xPos);
+        /* eslint-disable-next-line */
+      } else if (neededNodes[i - 1].data.partner && neededNodes[i - 1].data.partner.id === data[i].id) {
+        xPos = neededNodes[i - 1].position.x + 500;
+        console.log(`${data[i].name} + ${data[i].surname} от жены ${xPos}`);
       } else {
         xPos = firstChildXPos + 100;
+        console.log(`${data[i].name} + ${data[i].surname} один ${xPos}`);
+        // xPos = neededNodes[data[i]].position.x + 500;
       }
     }
 
-    console.log(`gen: ${gen}`);
-    console.log(`line: ${line}`);
+    console.log(data[i].name);
     console.log(`xPos: ${xPos}`);
+    console.log(xPos * 1);
 
     // const additionalXMoving = getAdditionalXMoving(data[i]);
 
@@ -97,7 +116,7 @@ const addCoordinates = (data: any) => {
       /* eslint-disable-next-line */
       // position: { x: data[i].generation * 100 + data[i].id * 50, y: data[i].generation * 200 }
       position: {
-        x: line * 100 + (1 / gen) * 100 + xPos * 1,
+        x: xPos * 1,
         y: gen * 400
       }
     };
