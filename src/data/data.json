@@ -23,9 +23,9 @@
     "gender": "male",
     "date_of_birth": "02.02.2012",
     "date_of_death": null,
-    "children": [],
+    "children": null,
     "parents": [2, 3],
-    "partner": [],
+    "partner": null,
     "line": "main"
   },
 
@@ -40,7 +40,7 @@
     "date_of_birth": "08.07.1998",
     "date_of_death": null,
     "children": [0, 1],
-    "parents": [ ],
+    "parents": [5, 6],
     "partner": [3],
     "line": "main"
   },
@@ -55,7 +55,7 @@
     "date_of_birth": "19.11.1988",
     "date_of_death": null,
     "children": [0, 1],
-    "parents": [ ],
+    "parents": null,
     "partner": [2],
     "line": "main"
   },
@@ -69,9 +69,9 @@
     "gender": "male",
     "date_of_birth": "10.04.2007",
     "date_of_death": null,
-    "children": [],
+    "children": null,
     "parents": [5, 6],
-    "partner": [],
+    "partner": null,
     "line": "second"
   },
 
@@ -86,7 +86,7 @@
     "date_of_birth": "26.06.1971",
     "date_of_death": null,
     "children": [2, 4],
-    "parents": [],
+    "parents": [7, 8],
     "partner": [6],
     "line": "main"
   },
@@ -101,7 +101,7 @@
     "date_of_birth": "15.12.1970",
     "date_of_death": null,
     "children": [2, 4],
-    "parents": [],
+    "parents": [9, 10],
     "partner": [5],
     "line": "main"
   },
@@ -117,7 +117,7 @@
     "date_of_birth": "06.02.1941",
     "date_of_death": null,
     "children": [5],
-    "parents": [],
+    "parents": [11, 12],
     "partner": [8],
     "line": "main"
   },
@@ -133,7 +133,7 @@
     "date_of_birth": "10.10.1939",
     "date_of_death": "09.05.1985",
     "children": [5],
-    "parents": [],
+    "parents": [13, 15],
     "partner": [7],
     "line": "main"
   },
@@ -149,7 +149,7 @@
     "date_of_birth": "узнать",
     "date_of_death": "узнать",
     "children": [6],
-    "parents": [],
+    "parents": [16, 17],
     "partner": [10],
     "line": "main"
   },
@@ -164,7 +164,7 @@
     "date_of_birth": "узнать",
     "date_of_death": "узнать",
     "children": [6],
-    "parents": [],
+    "parents": [18, 19],
     "partner": [9],
     "line": "main"
   },
@@ -180,7 +180,7 @@
     "date_of_birth": "28.05.1917",
     "date_of_death": "13.08.2006",
     "children": [7],
-    "parents": [],
+    "parents": [20, 21],
     "partner": [12],
     "line": "main"
   },
@@ -196,7 +196,7 @@
     "date_of_birth": "16.01.1910",
     "date_of_death": "05.06.1980",
     "children": [7],
-    "parents": [],
+    "parents": [22, 23],
     "partner": [11],
     "line": "main"
   },
@@ -212,7 +212,7 @@
     "date_of_birth": "узнать",
     "date_of_death": "узнать",
     "children": [8],
-    "parents": [],
+    "parents": null,
     "partner": [15],
     "line": "main"
   },
@@ -227,8 +227,8 @@
     "gender": "female",
     "date_of_birth": "узнать",
     "date_of_death": "узнать",
-    "children": [],
-    "parents": [],
+    "children": null,
+    "parents": null,
     "partner": [15],
     "line": "main"
   },
@@ -241,10 +241,10 @@
     "generation": 4,
     "firstSurname": null,
     "gender": "male",
-    "date_of_birth": "узнать",
+    "date_of_birth": "13.02.1913",
     "date_of_death": "узнать",
     "children": [8],
-    "parents": [],
+    "parents": null,
     "partner": [13, 14],
     "line": "main"
   },
@@ -262,7 +262,7 @@
     "date_of_birth": "узнать",
     "date_of_death": "узнать",
     "children": [9],
-    "parents": [],
+    "parents": null,
     "partner": [17],
     "line": "main"
   },
@@ -277,7 +277,7 @@
     "date_of_birth": "узнать",
     "date_of_death": "узнать",
     "children": [9],
-    "parents": [],
+    "parents": null,
     "partner": [16],
     "line": "main"
   },
@@ -293,7 +293,7 @@
     "date_of_birth": "узнать",
     "date_of_death": "узнать",
     "children": [10],
-    "parents": [],
+    "parents": null,
     "partner": [19],
     "line": "main"
   },
@@ -308,23 +308,23 @@
     "date_of_birth": "узнать",
     "date_of_death": "узнать",
     "children": [10],
-    "parents": [],
+    "parents": null,
     "partner": [18],
     "line": "main"
   },
 
   {
     "id": 20,
-    "name": "Мама Нюрочки",
-    "patronymic": "узнать",
+    "name": "Агриппина",
+    "patronymic": "Петровна",
     "surname": "Козлова",
     "generation": 5,
-    "firstSurname": "узнать",
+    "firstSurname": "Ульянова",
     "gender": "female",
-    "date_of_birth": "узнать",
-    "date_of_death": "узнать",
+    "date_of_birth": "приблизительно 1893",
+    "date_of_death": "30.05.1944",
     "children": [11],
-    "parents": [],
+    "parents": null,
     "partner": [21],
     "line": "main"
   },
@@ -332,7 +332,7 @@
   {
     "id": 21,
     "name": "Николай",
-    "patronymic": "узнать",
+    "patronymic": "Терентьевич",
     "surname": "Козлов",
     "generation": 5,
     "firstSurname": null,
@@ -340,7 +340,7 @@
     "date_of_birth": "узнать",
     "date_of_death": "узнать",
     "children": [11],
-    "parents": [],
+    "parents": null,
     "partner": [20],
     "line": "main"
   },
@@ -356,7 +356,7 @@
     "date_of_birth": "приблизительно 1877",
     "date_of_death": "27.10.1949",
     "children": [12],
-    "parents": [],
+    "parents": null,
     "partner": [23],
     "line": "main"
   },
@@ -372,7 +372,7 @@
     "date_of_birth": "приблизительно 1870",
     "date_of_death": "03.02.1942",
     "children": [12],
-    "parents": [],
+    "parents": null,
     "partner": [22],
     "line": "main"
   }
