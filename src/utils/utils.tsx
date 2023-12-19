@@ -36,111 +36,105 @@
 //   const gender = node.gender;
 // }
 
-const addCoordinates = (data: any) => {
-  const neededNodes = [];
-  /* eslint-disable-next-line */
+const addDates = (data: any) => {
+  const dataWithDeath = [];
   for (let i = 0; i < data.length; i++) {
-    let dateOfDeath;
+    const dataItem = { ...data[i] };
     if (data[i].date_of_death === null) {
-      dateOfDeath = "н.в.";
+      dataItem.date_of_death = "н.в.";
     } else {
-      dateOfDeath = data[i].date_of_death;
+      dataItem.date_of_death = data[i].date_of_death;
     }
-
-    // const line = getLine(data[i]);
-    const partnerId = data[i].partner[0];
-    const partnerPerson = data[partnerId];
-    let gen = data[i].generation;
-
-    if (gen === 0) {
-      gen = 0.9;
-    }
-
-    let xPos;
-    if (neededNodes.length === 0) {
-      xPos = 0;
-    } else {
-      let firstChildXPos;
-      let firstChildId;
-
-      /* eslint-disable-next-line */
-      firstChildId = data[i].children[0];
-      if (firstChildId === undefined) {
-        firstChildId = "no child";
-      }
-
-      console.log(data[i].name);
-      console.log(firstChildId);
-      console.log(data[i].children[0]);
-
-      if (firstChildId === "no child") {
-        firstChildXPos = 0;
-      } else {
-        firstChildXPos = Math.round(neededNodes[firstChildId].position.x);
-      }
-
-      /* eslint-disable-next-line */
-      if (data[i].gender === "female" && firstChildId !== "no child" && data[firstChildId].gender === "male") {
-        xPos = firstChildXPos - 100;
-        console.log(`${data[i].name} + ${data[i].surname} мать мальчика`);
-      } else if (data[i].gender === "female") {
-        xPos = firstChildXPos - 1500 + gen * 200;
-        console.log(data[i].name + data[i].surname + xPos);
-        /* eslint-disable-next-line */
-      } else if (neededNodes[i - 1].data.partner && neededNodes[i - 1].data.partner.id === data[i].id) {
-        xPos = neededNodes[i - 1].position.x + 500;
-        console.log(`${data[i].name} + ${data[i].surname} от жены ${xPos}`);
-      } else {
-        xPos = firstChildXPos + 100;
-        console.log(`${data[i].name} + ${data[i].surname} один ${xPos}`);
-        // xPos = neededNodes[data[i]].position.x + 500;
-      }
-    }
-
-    console.log(data[i].name);
-    console.log(`xPos: ${xPos}`);
-    console.log(xPos * 1);
-
-    // const additionalXMoving = getAdditionalXMoving(data[i]);
-
-    const neededNode: any = {
-      id: `node-${data[i].id}`,
-      type: "textUpdater",
-      // data: data[i],
-      data: {
-        personName: `${data[i].name} ${data[i].patronymic} ${data[i].surname}`,
-        date: `${data[i].date_of_birth} - ${dateOfDeath}`,
-        partner: partnerPerson
-        // firstChild: firstChildPerson
-      },
-      /* eslint-disable-next-line */
-      // position: { x: data[i].generation * 100 + data[i].id * 50, y: data[i].generation * 200 }
-      position: {
-        x: xPos * 1,
-        y: gen * 400
-      }
-    };
-    neededNodes.push(neededNode);
+    dataWithDeath.push(dataItem);
   }
-
-  console.log(neededNodes);
-
-  return neededNodes;
-
-  // const dataWithCoordinates = data.map((node: any) => {
-  //   const xCoor = node.generation * 10;
-  //   const yCoor = node.generation * 20;
-  //   /* eslint-disable-next-line */
-  //   node.position = { x: xCoor, y: yCoor };
-  //   return node;
-  // });
-  // return dataWithCoordinates;
+  return dataWithDeath;
 };
 
+const createGenArrs = (data: any) => {
+  const genArrs = {};
+  const listOfGens: number[] = [];
+  for (let i = 0; i < data.length; i++) {
+    let tempArrName;
+    const gen = data[i].generation;
+    if (listOfGens.indexOf(gen) === -1) {
+      listOfGens.push(gen);
+      tempArrName = `gen-${gen}`;
+      /* eslint-disable-next-line */
+      //@ts-ignore
+      genArrs[tempArrName] = [data[i]];
+    } else {
+      tempArrName = `gen-${gen}`;
+      /* eslint-disable-next-line */
+      //@ts-ignore
+      genArrs[tempArrName] = [...genArrs[tempArrName], data[i]];
+    }
+  }
+  return genArrs;
+};
+
+const sortPeople = (genArrs: any) => {
+  const keys = Object.keys(genArrs);
+  keys.forEach((key) => {
+    const currGen = genArrs[key];
+    for (let j = 0; j < currGen.length; j++) {
+      let dateOfBirth = currGen[j].date_of_birth;
+      if (dateOfBirth.indexOf("приблизительно") !== -1) {
+        dateOfBirth = dateOfBirth.split(" ")[1];
+        dateOfBirth = `01.01.${dateOfBirth}`;
+      }
+      const date = Date.parse(dateOfBirth);
+      console.log(date);
+    }
+  });
+};
+
+// const addCoordinates = (genArrs: any) => {};
+
+// const addCoordinates = (data: any) => {
+//   const neededNodes = [];
+//   const counter = 0;
+
+//   while (counter < data.length) {
+
+//     const neededNode: any = {
+//       id: `node-${data[i].id}`,
+//       type: "textUpdater",
+//       // data: data[i],
+//       data: {
+//         personName: `${data[i].name} ${data[i].patronymic} ${data[i].surname}`,
+//         date: `${data[i].date_of_birth} - ${dateOfDeath}`,
+//         partner: firstPartner
+//         // firstChild: firstChildPerson
+//       },
+//       /* eslint-disable-next-line */
+//       // position: { x: data[i].generation * 100 + data[i].id * 50, y: data[i].generation * 200 }
+//       position: {
+//         x: xPos * 1,
+//         y: gen * 400
+//       }
+//     };
+//     neededNodes.push(neededNode);
+//     counter++;
+//   }
+
+// console.log(neededNodes);
+
+// return neededNodes;
+
+// const dataWithCoordinates = data.map((node: any) => {
+//   const xCoor = node.generation * 10;
+//   const yCoor = node.generation * 20;
+//   /* eslint-disable-next-line */
+//   node.position = { x: xCoor, y: yCoor };
+//   return node;
+// });
+// return dataWithCoordinates;
+// };
+
 const createInitialNodes = (data: any) => {
-  // const dataWithIds = addIds(data);
-  const dataWithIds = data;
-  const dataWithCoordinates = addCoordinates(dataWithIds);
+  const dataWithDates = addDates(data);
+  // const dataWithCoordinates = addCoordinates(dataWithDates);
+  const dataWithCoordinates = sortPeople(createGenArrs(dataWithDates));
   return dataWithCoordinates;
 };
 

@@ -41,6 +41,8 @@
         "indent": ["error", 2],
         "react/require-default-props": "off",
         "react/jsx-props-no-spreading": "off",
-        "@typescript-eslint/no-explicit-any": "off"
+        "@typescript-eslint/no-explicit-any": "off",
+        "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+        "prefer-destructuring": "warn"
     }
 }
