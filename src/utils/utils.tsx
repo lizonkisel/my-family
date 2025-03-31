@@ -1,42 +1,27 @@
-// import data from "../data/data.json";
+// 0. Пока не смотрела, зачем эта функция. Но она вызывается в createNodesWithAllInfo.
+const arrCommonFunc = (data: any) => {
+  // destructToGens(data);
+  // Эта функция рисует связи между 0 поколением и их родителями. Надо масштабировать на все поколения
+  const edges: any = [];
+  const zeroGen = data.filter((person: any) => person.generation === 0);
+  console.log(zeroGen);
 
-// const addIds = (data: any) => {
-//   /* eslint-disable-next-line */
-//   for (let i = 0; i < data.length - 1; i++) {
-//     /* По-хорошему, тут нужно описать тип объекта и добавить туда id-шник. Тогда ts ругаться не будет */
-//     /* eslint-disable-next-line */
-//     //@ts-ignore
-//     /* eslint-disable-next-line */
-//     data[i].id = i;
-//   }
-//   console.log(data);
+  zeroGen.forEach((person: any) => {
+    const parents = person.parents;
+    parents.forEach((parent: any) => {
+      const edge = {
+        id: `e${person.id}-${parent}`,
+        source: `node-${person.id}`,
+        target: `node-${parent}`
+      };
+      edges.push(edge);
+    });
+  });
+  console.log(edges);
+};
 
-//   return data;
-// };
-
-// const getLine = (node: any) => {
-//   let line;
-//   switch (node.line) {
-//   /* eslint-disable */
-//   case "main":
-//     line = 0;
-//     break;
-//   case "second":
-//   line = 1;
-//     break;
-//   default:
-//     line = 0;
-//   }
-//   /* eslint-enable */
-//   return line;
-// };
-
-// const getAdditionalXMoving = (node: any) => {
-//   /* eslint-disable-next-line */
-//   const gender = node.gender;
-// }
-
-const addDates = (data: any) => {
+// 1. Задаём дату смерти как "н.в.", если человек жив
+const updateDeathDate = (data: any) => {
   const dataWithDeath = [];
   for (let i = 0; i < data.length; i++) {
     const dataItem = { ...data[i] };
@@ -47,9 +32,11 @@ const addDates = (data: any) => {
     }
     dataWithDeath.push(dataItem);
   }
+  console.log(dataWithDeath);
   return dataWithDeath;
 };
 
+// 2. Разбиваем массив людей в объект с массивами нескольких поколений
 const createGenArrs = (data: any) => {
   const genArrs = {};
   const listOfGens: number[] = [];
@@ -69,11 +56,17 @@ const createGenArrs = (data: any) => {
       genArrs[tempArrName] = [...genArrs[tempArrName], data[i]];
     }
   }
+  console.log(genArrs);
   return genArrs;
 };
 
-const sortPeople = (genArrs: any) => {
+// 3. Для далёких предков задаём дату рождения как 01.01. из года рождения
+const updateBirthDate = (genArrs: any) => {
+  console.log(genArrs);
+
   const keys = Object.keys(genArrs);
+  console.log(keys);
+
   keys.forEach((key) => {
     const currGen = genArrs[key];
     for (let j = 0; j < currGen.length; j++) {
@@ -81,18 +74,85 @@ const sortPeople = (genArrs: any) => {
       if (dateOfBirth.indexOf("приблизительно") !== -1) {
         dateOfBirth = dateOfBirth.split(" ")[1];
         dateOfBirth = `01.01.${dateOfBirth}`;
+        console.log("azaza");
+        currGen[j].date_of_birth = dateOfBirth;
       }
       const date = Date.parse(dateOfBirth);
       console.log(date);
     }
   });
+  console.log(genArrs);
+  return genArrs;
 };
+
+// 4. Добавляем координаты для отрисовки карточек
+// По идее, сюда надо поключить функции расчёта положения
+const addCoordinates = (data: any) => {
+  const wetData = data;
+
+  const keys = Object.keys(wetData);
+  console.log(keys);
+
+  keys.forEach((key) => {
+    const currGen = wetData[key];
+    for (let j = 0; j < currGen.length; j++) {
+      const xCoor = 10;
+      // let yCoor = 20;
+
+      const nodeData = {
+        id: `node-${currGen[j].id}`,
+        type: "textUpdater",
+        position: { x: xCoor, y: 100 },
+        data: {
+          personName: `${currGen[j].name} ${currGen[j].patronymic} ${currGen[j].surname}`,
+          date: `${currGen[j].date_of_birth} - ${currGen[j].date_of_death}`
+        }
+      };
+      currGen[j].nodeData = nodeData;
+    }
+  });
+  console.log(wetData);
+  return wetData;
+};
+
+const createNodesWithAllInfo = (data: any) => {
+  arrCommonFunc(data);
+  const dataWithDeathDate = updateDeathDate(data);
+  // По идее, проще вначале апдейтить дату рождения, а уже потом разбивать на поколения
+  const dataWithGenerations = createGenArrs(dataWithDeathDate);
+  const dataWithBirthDate = updateBirthDate(dataWithGenerations);
+  console.log(dataWithBirthDate);
+
+  const dataWithCoordinates = addCoordinates(dataWithBirthDate);
+  return dataWithCoordinates;
+};
+
+// Это главная функция для FlowBoard. В ней создаётся массив узлоа с координатами и основными сведениями
+const createNodesData = (wetData: any) => {
+  const data = createNodesWithAllInfo(wetData);
+  const nodesArr: any = [];
+  const keys = Object.keys(data);
+  console.log(keys);
+
+  keys.forEach((key) => {
+    const currGen = data[key];
+    for (let j = 0; j < currGen.length; j++) {
+      nodesArr.push(currGen[j].nodeData);
+    }
+  });
+  console.log(nodesArr);
+  return nodesArr;
+};
+
+// Где-то надо добавить функция задания связей между карточками
+
+// Надо разобраться, что это
 
 // const addCoordinates = (genArrs: any) => {};
 
 // const addCoordinates = (data: any) => {
 //   const neededNodes = [];
-//   const counter = 0;
+//   let counter = 0;
 
 //   while (counter < data.length) {
 
@@ -116,10 +176,9 @@ const sortPeople = (genArrs: any) => {
 //     neededNodes.push(neededNode);
 //     counter++;
 //   }
+//   console.log(neededNodes);
 
-// console.log(neededNodes);
-
-// return neededNodes;
+//   return neededNodes;
 
 // const dataWithCoordinates = data.map((node: any) => {
 //   const xCoor = node.generation * 10;
@@ -146,27 +205,6 @@ const sortPeople = (genArrs: any) => {
 //   return persons;
 // };
 
-const arrCommonFunc = (data: any) => {
-  // destructToGens(data);
-  // Эта функция рисует связи между 0 поколением и их родителями. Надо масштабировать на все поколения
-  const edges: any = [];
-  const zeroGen = data.filter((person: any) => person.generation === 0);
-  console.log(zeroGen);
-
-  zeroGen.forEach((person: any) => {
-    const parents = person.parents;
-    parents.forEach((parent: any) => {
-      const edge = {
-        id: `e${person.id}-${parent}`,
-        source: `node-${person.id}`,
-        target: `node-${parent}`
-      };
-      edges.push(edge);
-    });
-  });
-  console.log(edges);
-};
-
 // const setEdges = (data: any) => {
 //   // Эта функция должна формировать массив связей
 //   const structData = destructToGens(data);
@@ -176,13 +214,5 @@ const arrCommonFunc = (data: any) => {
 //   })
 // };
 
-const createInitialNodes = (data: any) => {
-  arrCommonFunc(data);
-  const dataWithDates = addDates(data);
-  // const dataWithCoordinates = addCoordinates(dataWithDates);
-  const dataWithCoordinates = sortPeople(createGenArrs(dataWithDates));
-  return dataWithCoordinates;
-};
-
 /* eslint-disable-next-line */
-export { createInitialNodes };
+export { createNodesData }

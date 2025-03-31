@@ -11,7 +11,7 @@ import "../Person/Person.scss";
 import NodePerson from "../Person/NodePerson";
 
 import data from "../../data/data.json";
-import { createInitialNodes } from "../../utils/utils";
+import { createNodesData } from "../../utils/utils";
 
 // const initialNodes = [
 //   {
@@ -28,67 +28,8 @@ import { createInitialNodes } from "../../utils/utils";
 //   }
 // ];
 
-// const createNodes = (testData: any) => {
-//   const nodes = testData.map((node: any) => {
-//     let dateOfDeath;
-//     if (node.date_of_death === null) {
-//       dateOfDeath = "н.в.";
-//     } else {
-//       dateOfDeath = node.date_of_death;
-//     }
-
-//     // const coordinates = getCoordinates(node.generation, node.id);
-
-//     let xCoor;
-//     if (node.generation === 1) {
-//       xCoor = 200;
-//     } else if (node.generation === 2) {
-//       xCoor = 400;
-//     }
-
-//     return {
-//       id: `node-${node.id}`,
-//       type: "textUpdater",
-//       position: { x: xCoor, y: 100 },
-//       // position: coordinates,
-//       data: {
-//         personName: `${node.name} ${node.patronymic} ${node.surname}`,
-//         date: `${node.date_of_birth} - ${dateOfDeath}`
-//       }
-//     };
-//   });
-//   return nodes;
-// };
-
-// const createFinalNodes = (someData: any) => {
-//   const preData = createInitialNodes(someData);
-//   const nodes = preData.map((node: any) => {
-//     let dateOfDeath;
-//     if (node.date_of_death === null) {
-//       dateOfDeath = "н.в.";
-//     } else {
-//       dateOfDeath = node.date_of_death;
-//     }
-//     return {
-//       // id: `node-${node.id}`,
-//       type: "textUpdater",
-//       // position: { x: xCoor, y: 100 },
-//       position: node.position,
-//       data: {
-//         personName: `${node.name} ${node.patronymic} ${node.surname}`,
-//         date: `${node.date_of_birth} - ${dateOfDeath}`
-//       }
-//     };
-//   });
-//   return nodes;
-// };
-
-// const initialNodes = createNodes(data);
-// const initialNodes = createNodes(personsWithIds);
-const initialNodes: any = createInitialNodes(data);
-
-// console.log(initialNodes);
-// const initialNodes = createFinalNodes(data);
+const initialNodes = createNodesData(data);
+console.log(initialNodes);
 
 const initialEdges = [
   {
@@ -103,8 +44,12 @@ const initialEdges = [
 const nodeTypes = { textUpdater: NodePerson };
 
 function FlowBoard() {
+  console.log("1");
   const [nodes, setNodes] = useState(initialNodes);
   const [edges, setEdges] = useState(initialEdges);
+
+  console.log(nodes);
+  console.log(edges);
 
   const onNodesChange = useCallback(
     /* eslint-disable-next-line */
@@ -124,7 +69,7 @@ function FlowBoard() {
     (connection: any) => setEdges((eds) => addEdge(connection, eds)),
     [setEdges]
   );
-
+  console.log("2");
   return (
     <ReactFlow
       nodes={nodes}
