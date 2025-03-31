@@ -23,9 +23,9 @@
     "gender": "male",
     "date_of_birth": "02.02.2012",
     "date_of_death": null,
-    "children": null,
+    "children": [],
     "parents": [2, 3],
-    "partner": null,
+    "partner": [],
     "line": "main"
   },
 
@@ -69,9 +69,9 @@
     "gender": "male",
     "date_of_birth": "10.04.2007",
     "date_of_death": null,
-    "children": null,
+    "children": [],
     "parents": [5, 6],
-    "partner": null,
+    "partner": [],
     "line": "second"
   },
 
@@ -227,7 +227,7 @@
     "gender": "female",
     "date_of_birth": "узнать",
     "date_of_death": "узнать",
-    "children": null,
+    "children": [],
     "parents": null,
     "partner": [15],
     "line": "main"

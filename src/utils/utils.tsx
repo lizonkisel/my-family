@@ -4,7 +4,6 @@ const arrCommonFunc = (data: any) => {
   // Эта функция рисует связи между 0 поколением и их родителями. Надо масштабировать на все поколения
   const edges: any = [];
   const zeroGen = data.filter((person: any) => person.generation === 0);
-  console.log(zeroGen);
 
   zeroGen.forEach((person: any) => {
     const parents = person.parents;
@@ -17,10 +16,25 @@ const arrCommonFunc = (data: any) => {
       edges.push(edge);
     });
   });
-  console.log(edges);
 };
 
-// 1. Задаём дату смерти как "н.в.", если человек жив
+// 1. Для далёких предков задаём дату рождения как 01.01. из года рождения
+const updateBirthDate = (data: any) => {
+  const dataWithBirth = [];
+  for (let i = 0; i < data.length; i++) {
+    const dataItem = { ...data[i] };
+    let dateOfBirth = dataItem.date_of_birth;
+    if (dateOfBirth.indexOf("приблизительно") !== -1) {
+      dateOfBirth = dateOfBirth.split(" ")[1];
+      dateOfBirth = `01.01.${dateOfBirth}`;
+      dataItem.date_of_birth = dateOfBirth;
+    }
+    dataWithBirth.push(dataItem);
+  }
+  return dataWithBirth;
+};
+
+// 2. Задаём дату смерти как "н.в.", если человек жив
 const updateDeathDate = (data: any) => {
   const dataWithDeath = [];
   for (let i = 0; i < data.length; i++) {
@@ -32,11 +46,10 @@ const updateDeathDate = (data: any) => {
     }
     dataWithDeath.push(dataItem);
   }
-  console.log(dataWithDeath);
   return dataWithDeath;
 };
 
-// 2. Разбиваем массив людей в объект с массивами нескольких поколений
+// 3. Разбиваем массив людей в объект с массивами нескольких поколений
 const createGenArrs = (data: any) => {
   const genArrs = {};
   const listOfGens: number[] = [];
@@ -56,33 +69,40 @@ const createGenArrs = (data: any) => {
       genArrs[tempArrName] = [...genArrs[tempArrName], data[i]];
     }
   }
-  console.log(genArrs);
   return genArrs;
 };
 
-// 3. Для далёких предков задаём дату рождения как 01.01. из года рождения
-const updateBirthDate = (genArrs: any) => {
-  console.log(genArrs);
+const countX = (person: any) => {
+  console.log(`Person.id: ${person.id}`);
+  let xCoor = 0;
 
-  const keys = Object.keys(genArrs);
-  console.log(keys);
+  const generation = person.generation;
+  console.log(`${generation}: generation`);
 
-  keys.forEach((key) => {
-    const currGen = genArrs[key];
-    for (let j = 0; j < currGen.length; j++) {
-      let dateOfBirth = currGen[j].date_of_birth;
-      if (dateOfBirth.indexOf("приблизительно") !== -1) {
-        dateOfBirth = dateOfBirth.split(" ")[1];
-        dateOfBirth = `01.01.${dateOfBirth}`;
-        console.log("azaza");
-        currGen[j].date_of_birth = dateOfBirth;
-      }
-      const date = Date.parse(dateOfBirth);
-      console.log(date);
+  const gender = person.gender === "female" ? -0.5 : 1;
+  console.log(`${gender}: gender`);
+
+  let childrenCoef = 0;
+  let partnerCoef = 0;
+
+  if (person.children.length !== 0) {
+    if (gender === -0.5) {
+      childrenCoef = person.id - person.children[0];
+    } else {
+      childrenCoef = person.id - person.children[0];
     }
-  });
-  console.log(genArrs);
-  return genArrs;
+    // childrenCoef = person.id - person.children[0];
+  }
+  console.log(`${childrenCoef}: childrenCoef`);
+
+  if (person.partner.length !== 0) {
+    partnerCoef = person.id - person.partner[0];
+  }
+  console.log(`${partnerCoef}: partnerCoef`);
+
+  xCoor = -1 * childrenCoef * 300 - gender * 300 - partnerCoef * -1 * 300;
+  console.log(`${xCoor}: xCoor`);
+  return xCoor;
 };
 
 // 4. Добавляем координаты для отрисовки карточек
@@ -91,18 +111,20 @@ const addCoordinates = (data: any) => {
   const wetData = data;
 
   const keys = Object.keys(wetData);
-  console.log(keys);
 
   keys.forEach((key) => {
     const currGen = wetData[key];
     for (let j = 0; j < currGen.length; j++) {
-      const xCoor = 10;
-      // let yCoor = 20;
+      // const xCoor = 240 * currGen[j].generation + 240 * currGen[j].id;
+      // const yCoor = 400 * currGen[j].generation;
+
+      const xCoor = countX(currGen[j]);
+      const yCoor = 400 * currGen[j].generation;
 
       const nodeData = {
         id: `node-${currGen[j].id}`,
         type: "textUpdater",
-        position: { x: xCoor, y: 100 },
+        position: { x: xCoor, y: yCoor },
         data: {
           personName: `${currGen[j].name} ${currGen[j].patronymic} ${currGen[j].surname}`,
           date: `${currGen[j].date_of_birth} - ${currGen[j].date_of_death}`
@@ -115,15 +137,18 @@ const addCoordinates = (data: any) => {
   return wetData;
 };
 
+// const countY = (person: any) => {
+//   const yCoor = 0;
+//   return yCoor;
+// };
+
 const createNodesWithAllInfo = (data: any) => {
   arrCommonFunc(data);
-  const dataWithDeathDate = updateDeathDate(data);
-  // По идее, проще вначале апдейтить дату рождения, а уже потом разбивать на поколения
+  const dataWithBirthDate = updateBirthDate(data);
+  const dataWithDeathDate = updateDeathDate(dataWithBirthDate);
   const dataWithGenerations = createGenArrs(dataWithDeathDate);
-  const dataWithBirthDate = updateBirthDate(dataWithGenerations);
-  console.log(dataWithBirthDate);
 
-  const dataWithCoordinates = addCoordinates(dataWithBirthDate);
+  const dataWithCoordinates = addCoordinates(dataWithGenerations);
   return dataWithCoordinates;
 };
 
@@ -132,7 +157,6 @@ const createNodesData = (wetData: any) => {
   const data = createNodesWithAllInfo(wetData);
   const nodesArr: any = [];
   const keys = Object.keys(data);
-  console.log(keys);
 
   keys.forEach((key) => {
     const currGen = data[key];

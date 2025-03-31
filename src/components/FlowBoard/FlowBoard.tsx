@@ -29,7 +29,7 @@ import { createNodesData } from "../../utils/utils";
 // ];
 
 const initialNodes = createNodesData(data);
-console.log(initialNodes);
+// console.log(initialNodes);
 
 const initialEdges = [
   {
@@ -44,12 +44,11 @@ const initialEdges = [
 const nodeTypes = { textUpdater: NodePerson };
 
 function FlowBoard() {
-  console.log("1");
   const [nodes, setNodes] = useState(initialNodes);
   const [edges, setEdges] = useState(initialEdges);
 
-  console.log(nodes);
-  console.log(edges);
+  // console.log(nodes);
+  // console.log(edges);
 
   const onNodesChange = useCallback(
     /* eslint-disable-next-line */
@@ -69,7 +68,6 @@ function FlowBoard() {
     (connection: any) => setEdges((eds) => addEdge(connection, eds)),
     [setEdges]
   );
-  console.log("2");
   return (
     <ReactFlow
       nodes={nodes}
