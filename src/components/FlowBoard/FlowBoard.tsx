@@ -10,8 +10,8 @@ import "../Person/Person.scss";
 
 import NodePerson from "../Person/NodePerson";
 
-import data from "../data/data.json";
-import { createInitialNodes } from "../utils/utils";
+import data from "../../data/data.json";
+import { createInitialNodes } from "../../utils/utils";
 
 // const initialNodes = [
 //   {
@@ -85,9 +85,9 @@ import { createInitialNodes } from "../utils/utils";
 
 // const initialNodes = createNodes(data);
 // const initialNodes = createNodes(personsWithIds);
-const initialNodes = createInitialNodes(data);
+const initialNodes: any = createInitialNodes(data);
 
-console.log(initialNodes);
+// console.log(initialNodes);
 // const initialNodes = createFinalNodes(data);
 
 const initialEdges = [

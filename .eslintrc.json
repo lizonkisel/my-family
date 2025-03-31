@@ -38,11 +38,18 @@
               "tsx": "never"
             }
         ],
+        "no-console": "off",
         "indent": ["error", 2],
         "react/require-default-props": "off",
         "react/jsx-props-no-spreading": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
-        "prefer-destructuring": "warn"
+        "prefer-destructuring": "off",
+        "prettier/prettier": [
+          "error",
+          {
+            "endOfLine": "auto"
+          }
+        ]
     }
 }

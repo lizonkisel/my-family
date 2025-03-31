@@ -1,5 +1,65 @@
 [
 {
+  "name": "Алексей",
+  "patronymic": "Степанович",
+  "surname": "Петров",
+  "generation": 5,
+  "firstSurname": null,
+  "gender": "male",
+  "date_of_birth": "приблизительно 1870",
+  "date_of_death": "03.02.1942",
+  "children": [
+    {
+
+    },
+    {
+
+    }
+  ],
+  "parents": [
+    {
+
+    },
+    {
+
+    }
+  ],
+  "partner": {
+
+  }
+},
+
+{
+  "name": "Афанасия",
+  "patronymic": "Максимовна",
+  "surname": "Петрова",
+  "generation": 5,
+  "firstSurname": "Плёнкина",
+  "gender": "female",
+  "date_of_birth": "приблизительно 1877",
+  "date_of_death": "27.10.1949",
+  "children": [
+    {
+
+    },
+    {
+
+    }
+  ],
+  "parents": [
+    {
+
+    },
+    {
+
+    }
+  ],
+  "partner": {
+
+  }
+},
+
+{
   "name": "Анна",
   "patronymic": "Алексеевна",
   "surname": "Безрукова",

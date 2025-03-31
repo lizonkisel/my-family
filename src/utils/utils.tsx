@@ -131,7 +131,53 @@ const sortPeople = (genArrs: any) => {
 // return dataWithCoordinates;
 // };
 
+// const destructToGens = (data: any) => {
+//   const persons: any = {};
+//   data.forEach((person: any) => {
+//     const gen = `gen-${person.generation}`;
+//     if (Object.keys(persons).indexOf(gen) === -1) {
+//       persons[gen] = [];
+//       persons[gen] = [person];
+//     } else {
+//       persons[gen] = [...persons[gen], person];
+//     }
+//   });
+//   console.log(persons);
+//   return persons;
+// };
+
+const arrCommonFunc = (data: any) => {
+  // destructToGens(data);
+  // Эта функция рисует связи между 0 поколением и их родителями. Надо масштабировать на все поколения
+  const edges: any = [];
+  const zeroGen = data.filter((person: any) => person.generation === 0);
+  console.log(zeroGen);
+
+  zeroGen.forEach((person: any) => {
+    const parents = person.parents;
+    parents.forEach((parent: any) => {
+      const edge = {
+        id: `e${person.id}-${parent}`,
+        source: `node-${person.id}`,
+        target: `node-${parent}`
+      };
+      edges.push(edge);
+    });
+  });
+  console.log(edges);
+};
+
+// const setEdges = (data: any) => {
+//   // Эта функция должна формировать массив связей
+//   const structData = destructToGens(data);
+//   const dataGens = Object.keys(structData);
+//   dataGens.forEach((genKey) => {
+
+//   })
+// };
+
 const createInitialNodes = (data: any) => {
+  arrCommonFunc(data);
   const dataWithDates = addDates(data);
   // const dataWithCoordinates = addCoordinates(dataWithDates);
   const dataWithCoordinates = sortPeople(createGenArrs(dataWithDates));

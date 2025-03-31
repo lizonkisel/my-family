@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../img/main_icon.png";
+import logo from "../../img/main_icon.png";
 import "./Header.scss";
 
 function Header() {
