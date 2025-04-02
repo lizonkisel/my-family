@@ -1,3 +1,5 @@
+import { calculateCoordinates } from "./count-position";
+
 // 0. Пока не смотрела, зачем эта функция. Но она вызывается в createNodesWithAllInfo.
 const arrCommonFunc = (data: any) => {
   // destructToGens(data);
@@ -72,75 +74,11 @@ const createGenArrs = (data: any) => {
   return genArrs;
 };
 
-const countX = (person: any) => {
-  console.log(`Person.id: ${person.id}`);
-  let xCoor = 0;
-
-  const generation = person.generation;
-  console.log(`${generation}: generation`);
-
-  const gender = person.gender === "female" ? -0.5 : 1;
-  console.log(`${gender}: gender`);
-
-  let childrenCoef = 0;
-  let partnerCoef = 0;
-
-  if (person.children.length !== 0) {
-    if (gender === -0.5) {
-      childrenCoef = person.id - person.children[0];
-    } else {
-      childrenCoef = person.id - person.children[0];
-    }
-    // childrenCoef = person.id - person.children[0];
-  }
-  console.log(`${childrenCoef}: childrenCoef`);
-
-  if (person.partner.length !== 0) {
-    partnerCoef = person.id - person.partner[0];
-  }
-  console.log(`${partnerCoef}: partnerCoef`);
-
-  xCoor = -1 * childrenCoef * 300 - gender * 300 - partnerCoef * -1 * 300;
-  console.log(`${xCoor}: xCoor`);
-  return xCoor;
-};
-
 // 4. Добавляем координаты для отрисовки карточек
 // По идее, сюда надо поключить функции расчёта положения
-const addCoordinates = (data: any) => {
-  const wetData = data;
 
-  const keys = Object.keys(wetData);
-
-  keys.forEach((key) => {
-    const currGen = wetData[key];
-    for (let j = 0; j < currGen.length; j++) {
-      // const xCoor = 240 * currGen[j].generation + 240 * currGen[j].id;
-      // const yCoor = 400 * currGen[j].generation;
-
-      const xCoor = countX(currGen[j]);
-      const yCoor = 400 * currGen[j].generation;
-
-      const nodeData = {
-        id: `node-${currGen[j].id}`,
-        type: "textUpdater",
-        position: { x: xCoor, y: yCoor },
-        data: {
-          personName: `${currGen[j].name} ${currGen[j].patronymic} ${currGen[j].surname}`,
-          date: `${currGen[j].date_of_birth} - ${currGen[j].date_of_death}`
-        }
-      };
-      currGen[j].nodeData = nodeData;
-    }
-  });
-  console.log(wetData);
-  return wetData;
-};
-
-// const countY = (person: any) => {
-//   const yCoor = 0;
-//   return yCoor;
-// };
+// Перенесла в файл count-position.tsx
+// const addCoordinates = (data: any) => {};
 
 const createNodesWithAllInfo = (data: any) => {
   arrCommonFunc(data);
@@ -148,18 +86,18 @@ const createNodesWithAllInfo = (data: any) => {
   const dataWithDeathDate = updateDeathDate(dataWithBirthDate);
   const dataWithGenerations = createGenArrs(dataWithDeathDate);
 
-  const dataWithCoordinates = addCoordinates(dataWithGenerations);
-  return dataWithCoordinates;
+  return dataWithGenerations;
 };
 
 // Это главная функция для FlowBoard. В ней создаётся массив узлоа с координатами и основными сведениями
 const createNodesData = (wetData: any) => {
   const data = createNodesWithAllInfo(wetData);
+  const dataWithCoordinates = calculateCoordinates(data);
   const nodesArr: any = [];
-  const keys = Object.keys(data);
+  const keys = Object.keys(dataWithCoordinates);
 
   keys.forEach((key) => {
-    const currGen = data[key];
+    const currGen = dataWithCoordinates[key];
     for (let j = 0; j < currGen.length; j++) {
       nodesArr.push(currGen[j].nodeData);
     }
@@ -171,48 +109,6 @@ const createNodesData = (wetData: any) => {
 // Где-то надо добавить функция задания связей между карточками
 
 // Надо разобраться, что это
-
-// const addCoordinates = (genArrs: any) => {};
-
-// const addCoordinates = (data: any) => {
-//   const neededNodes = [];
-//   let counter = 0;
-
-//   while (counter < data.length) {
-
-//     const neededNode: any = {
-//       id: `node-${data[i].id}`,
-//       type: "textUpdater",
-//       // data: data[i],
-//       data: {
-//         personName: `${data[i].name} ${data[i].patronymic} ${data[i].surname}`,
-//         date: `${data[i].date_of_birth} - ${dateOfDeath}`,
-//         partner: firstPartner
-//         // firstChild: firstChildPerson
-//       },
-//       /* eslint-disable-next-line */
-//       // position: { x: data[i].generation * 100 + data[i].id * 50, y: data[i].generation * 200 }
-//       position: {
-//         x: xPos * 1,
-//         y: gen * 400
-//       }
-//     };
-//     neededNodes.push(neededNode);
-//     counter++;
-//   }
-//   console.log(neededNodes);
-
-//   return neededNodes;
-
-// const dataWithCoordinates = data.map((node: any) => {
-//   const xCoor = node.generation * 10;
-//   const yCoor = node.generation * 20;
-//   /* eslint-disable-next-line */
-//   node.position = { x: xCoor, y: yCoor };
-//   return node;
-// });
-// return dataWithCoordinates;
-// };
 
 // const destructToGens = (data: any) => {
 //   const persons: any = {};
