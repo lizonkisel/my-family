@@ -55,7 +55,7 @@
     "date_of_birth": "19.11.1988",
     "date_of_death": null,
     "children": [0, 1],
-    "parents": null,
+    "parents": [],
     "partner": [2],
     "line": "main"
   },
@@ -212,7 +212,7 @@
     "date_of_birth": "узнать",
     "date_of_death": "узнать",
     "children": [8],
-    "parents": null,
+    "parents": [],
     "partner": [15],
     "line": "main"
   },
@@ -228,7 +228,7 @@
     "date_of_birth": "узнать",
     "date_of_death": "узнать",
     "children": [],
-    "parents": null,
+    "parents": [],
     "partner": [15],
     "line": "main"
   },
@@ -244,7 +244,7 @@
     "date_of_birth": "13.02.1913",
     "date_of_death": "узнать",
     "children": [8],
-    "parents": null,
+    "parents": [],
     "partner": [13, 14],
     "line": "main"
   },
@@ -262,7 +262,7 @@
     "date_of_birth": "узнать",
     "date_of_death": "узнать",
     "children": [9],
-    "parents": null,
+    "parents": [],
     "partner": [17],
     "line": "main"
   },
@@ -277,7 +277,7 @@
     "date_of_birth": "узнать",
     "date_of_death": "узнать",
     "children": [9],
-    "parents": null,
+    "parents": [],
     "partner": [16],
     "line": "main"
   },
@@ -293,7 +293,7 @@
     "date_of_birth": "узнать",
     "date_of_death": "узнать",
     "children": [10],
-    "parents": null,
+    "parents": [],
     "partner": [19],
     "line": "main"
   },
@@ -308,7 +308,7 @@
     "date_of_birth": "узнать",
     "date_of_death": "узнать",
     "children": [10],
-    "parents": null,
+    "parents": [],
     "partner": [18],
     "line": "main"
   },
@@ -324,7 +324,7 @@
     "date_of_birth": "приблизительно 1893",
     "date_of_death": "30.05.1944",
     "children": [11],
-    "parents": null,
+    "parents": [],
     "partner": [21],
     "line": "main"
   },
@@ -340,7 +340,7 @@
     "date_of_birth": "узнать",
     "date_of_death": "узнать",
     "children": [11],
-    "parents": null,
+    "parents": [],
     "partner": [20],
     "line": "main"
   },
@@ -356,7 +356,7 @@
     "date_of_birth": "приблизительно 1877",
     "date_of_death": "27.10.1949",
     "children": [12],
-    "parents": null,
+    "parents": [],
     "partner": [23],
     "line": "main"
   },
@@ -372,7 +372,7 @@
     "date_of_birth": "приблизительно 1870",
     "date_of_death": "03.02.1942",
     "children": [12],
-    "parents": null,
+    "parents": [],
     "partner": [22],
     "line": "main"
   }

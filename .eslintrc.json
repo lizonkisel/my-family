@@ -39,6 +39,7 @@
             }
         ],
         "no-console": "off",
+        "no-lonely-if": "off",
         "indent": ["error", 2],
         "react/require-default-props": "off",
         "react/jsx-props-no-spreading": "off",

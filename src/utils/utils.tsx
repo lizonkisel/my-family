@@ -1,4 +1,4 @@
-import { calculateCoordinates } from "./count-position";
+import { calculateYCoordinates, countXNodes } from "./count-position";
 
 // 0. Пока не смотрела, зачем эта функция. Но она вызывается в createNodesWithAllInfo.
 const arrCommonFunc = (data: any) => {
@@ -90,20 +90,37 @@ const createNodesWithAllInfo = (data: any) => {
 };
 
 // Это главная функция для FlowBoard. В ней создаётся массив узлоа с координатами и основными сведениями
+
+// Сейчас мы тут создаём просто массив из исходных данных, в который добавлено поле nodeData с верными координатами y. Надо добавить координаты x
 const createNodesData = (wetData: any) => {
   const data = createNodesWithAllInfo(wetData);
-  const dataWithCoordinates = calculateCoordinates(data);
-  const nodesArr: any = [];
+  const dataWithCoordinates = calculateYCoordinates(data);
+  console.log(dataWithCoordinates);
+  const nodesYArr: any = [];
+  let nodesArr: any = [];
   const keys = Object.keys(dataWithCoordinates);
 
   keys.forEach((key) => {
     const currGen = dataWithCoordinates[key];
     for (let j = 0; j < currGen.length; j++) {
-      nodesArr.push(currGen[j].nodeData);
+      // nodesYArr.push(currGen[j].nodeData);
+      nodesYArr.push(currGen[j]);
     }
   });
+  console.log(nodesYArr);
+
+  nodesArr = countXNodes(nodesYArr);
+
   console.log(nodesArr);
-  return nodesArr;
+
+  const initialNodes = nodesArr.map((person: any) => {
+    const nodeData = person.nodeData;
+    return nodeData;
+  });
+
+  console.log(initialNodes);
+
+  return initialNodes;
 };
 
 // Где-то надо добавить функция задания связей между карточками
