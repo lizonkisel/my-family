@@ -1,784 +1,379 @@
-{
-  "name": "Елизавета",
-  "patronymic": "Евгеньевна",
-  "surname": "Юновидова",
-  "generation": 1,
-  "firstSurname": "Сидорова",
-  "gender": "female",
-  "date_of_birth": "08.07.1998",
-  "date_of_death": null,
-  "children": [
-    {
+[
+  {
+    "id": 0,
+    "name": "Юрий",
+    "patronymic": "Дмитриевич",
+    "surname": "Юновидов",
+    "generation": 0,
+    "gender": "male",
+    "date_of_birth": "06.03.2023",
+    "date_of_death": null,
+    "children": [],
+    "parents": [2, 3],
+    "partner": [],
+    "line": "main"
+  },
 
-    },
-    {
+  {
+    "id": 1,
+    "name": "Валерий",
+    "patronymic": "Дмитриевич",
+    "surname": "Юновидов",
+    "generation": 0,
+    "gender": "male",
+    "date_of_birth": "02.02.2012",
+    "date_of_death": null,
+    "children": [],
+    "parents": [2, 3],
+    "partner": [],
+    "line": "main"
+  },
 
-    }
-  ],
-  "parents": [
-    {
+  {
+    "id": 2,
+    "name": "Елизавета",
+    "patronymic": "Евгеньевна",
+    "surname": "Юновидова",
+    "generation": 1,
+    "firstSurname": "Сидорова",
+    "gender": "female",
+    "date_of_birth": "08.07.1998",
+    "date_of_death": null,
+    "children": [0, 1],
+    "parents": [5, 6],
+    "partner": [3],
+    "line": "main"
+  },
 
-    },
-    {
+  {
+    "id": 3,
+    "name": "Дмитрий",
+    "patronymic": "Валерьевич",
+    "surname": "Юновидов",
+    "generation": 1,
+    "gender": "male",
+    "date_of_birth": "19.11.1988",
+    "date_of_death": null,
+    "children": [0, 1],
+    "parents": [],
+    "partner": [2],
+    "line": "main"
+  },
 
-    }
-  ],
-  "partner": {
+  {
+    "id": 4,
+    "name": "Михаил",
+    "patronymic": "Евгеньевич",
+    "surname": "Сидоров",
+    "generation": 1,
+    "gender": "male",
+    "date_of_birth": "10.04.2007",
+    "date_of_death": null,
+    "children": [],
+    "parents": [5, 6],
+    "partner": [],
+    "line": "second"
+  },
 
+  {
+    "id": 5,
+    "name": "Алла",
+    "patronymic": "Вячеславовна",
+    "surname": "Сидорова",
+    "generation": 2,
+    "firstSurname": "Кузнецова (Мифтахова)",
+    "gender": "female",
+    "date_of_birth": "26.06.1971",
+    "date_of_death": null,
+    "children": [2, 4],
+    "parents": [7, 8],
+    "partner": [6],
+    "line": "main"
+  },
+
+  {
+    "id": 6,
+    "name": "Евгений",
+    "patronymic": "Юрьевич",
+    "surname": "Сидоров",
+    "generation": 2,
+    "gender": "male",
+    "date_of_birth": "15.12.1970",
+    "date_of_death": null,
+    "children": [2, 4],
+    "parents": [9, 10],
+    "partner": [5],
+    "line": "main"
+  },
+
+  {
+    "id": 7,
+    "name": "Нина",
+    "patronymic": "Георгиевна",
+    "surname": "Кузнецова",
+    "generation": 3,
+    "firstSurname": "Петрова",
+    "gender": "female",
+    "date_of_birth": "06.02.1941",
+    "date_of_death": null,
+    "children": [5],
+    "parents": [11, 12],
+    "partner": [8],
+    "line": "main"
+  },
+
+  {
+    "id": 8,
+    "name": "Вячеслав",
+    "patronymic": "Евгеньевич",
+    "surname": "Кузнецов",
+    "generation": 3,
+    "firstSurname": null,
+    "gender": "male",
+    "date_of_birth": "10.10.1939",
+    "date_of_death": "09.05.1985",
+    "children": [5],
+    "parents": [13, 15],
+    "partner": [7],
+    "line": "main"
+  },
+
+  {
+    "id": 9,
+    "name": "Мария",
+    "patronymic": "Алексеевна",
+    "surname": "Сидорова",
+    "generation": 3,
+    "firstSurname": "узнать",
+    "gender": "female",
+    "date_of_birth": "узнать",
+    "date_of_death": "узнать",
+    "children": [6],
+    "parents": [16, 17],
+    "partner": [10],
+    "line": "main"
+  },
+
+  {
+    "id": 10,
+    "name": "Юрий",
+    "patronymic": "Константинович",
+    "surname": "Сидоров",
+    "generation": 3,
+    "gender": "male",
+    "date_of_birth": "узнать",
+    "date_of_death": "узнать",
+    "children": [6],
+    "parents": [18, 19],
+    "partner": [9],
+    "line": "main"
+  },
+
+  {
+    "id": 11,
+    "name": "Анна",
+    "patronymic": "Николаевна",
+    "surname": "Петрова",
+    "generation": 4,
+    "firstSurname": "Козлова",
+    "gender": "female",
+    "date_of_birth": "28.05.1917",
+    "date_of_death": "13.08.2006",
+    "children": [7],
+    "parents": [20, 21],
+    "partner": [12],
+    "line": "main"
+  },
+
+  {
+    "id": 12,
+    "name": "Георгий",
+    "patronymic": "Алексеевич",
+    "surname": "Петров",
+    "generation": 4,
+    "firstSurname": null,
+    "gender": "male",
+    "date_of_birth": "16.01.1910",
+    "date_of_death": "05.06.1980",
+    "children": [7],
+    "parents": [22, 23],
+    "partner": [11],
+    "line": "main"
+  },
+
+  {
+    "id": 13,
+    "name": "Наталия",
+    "patronymic": "узнать",
+    "surname": "Шерстобитова",
+    "generation": 4,
+    "firstSurname": "узнать",
+    "gender": "female",
+    "date_of_birth": "узнать",
+    "date_of_death": "узнать",
+    "children": [8],
+    "parents": [],
+    "partner": [15],
+    "line": "main"
+  },
+
+  {
+    "id": 14,
+    "name": "Мать тёти Нелли",
+    "patronymic": "узнать",
+    "surname": "узнать",
+    "generation": 4,
+    "firstSurname": null,
+    "gender": "female",
+    "date_of_birth": "узнать",
+    "date_of_death": "узнать",
+    "children": [],
+    "parents": [],
+    "partner": [15],
+    "line": "main"
+  },
+
+  {
+    "id": 15,
+    "name": "Евгений",
+    "patronymic": "Александрович",
+    "surname": "Кузнецов",
+    "generation": 4,
+    "firstSurname": null,
+    "gender": "male",
+    "date_of_birth": "13.02.1913",
+    "date_of_death": "узнать",
+    "children": [8],
+    "parents": [],
+    "partner": [13, 14],
+    "line": "main"
+  },
+
+
+
+  {
+    "id": 16,
+    "name": "Мать бабы Маши",
+    "patronymic": "узнать",
+    "surname": "узнать",
+    "generation": 4,
+    "firstSurname": "узнать",
+    "gender": "female",
+    "date_of_birth": "узнать",
+    "date_of_death": "узнать",
+    "children": [9],
+    "parents": [],
+    "partner": [17],
+    "line": "main"
+  },
+
+  {
+    "id": 17,
+    "name": "Отец бабы Маши",
+    "patronymic": "узнать",
+    "surname": "узнать",
+    "generation": 4,
+    "gender": "male",
+    "date_of_birth": "узнать",
+    "date_of_death": "узнать",
+    "children": [9],
+    "parents": [],
+    "partner": [16],
+    "line": "main"
+  },
+
+  {
+    "id": 18,
+    "name": "Мать деда Юры",
+    "patronymic": "узнать",
+    "surname": "узнать",
+    "generation": 4,
+    "firstSurname": "узнать",
+    "gender": "female",
+    "date_of_birth": "узнать",
+    "date_of_death": "узнать",
+    "children": [10],
+    "parents": [],
+    "partner": [19],
+    "line": "main"
+  },
+
+  {
+    "id": 19,
+    "name": "Константин",
+    "patronymic": "узнать",
+    "surname": "Сидоров",
+    "generation": 4,
+    "gender": "male",
+    "date_of_birth": "узнать",
+    "date_of_death": "узнать",
+    "children": [10],
+    "parents": [],
+    "partner": [18],
+    "line": "main"
+  },
+
+  {
+    "id": 20,
+    "name": "Агриппина",
+    "patronymic": "Петровна",
+    "surname": "Козлова",
+    "generation": 5,
+    "firstSurname": "Ульянова",
+    "gender": "female",
+    "date_of_birth": "приблизительно 1893",
+    "date_of_death": "30.05.1944",
+    "children": [11],
+    "parents": [],
+    "partner": [21],
+    "line": "main"
+  },
+
+  {
+    "id": 21,
+    "name": "Николай",
+    "patronymic": "Терентьевич",
+    "surname": "Козлов",
+    "generation": 5,
+    "firstSurname": null,
+    "gender": "male",
+    "date_of_birth": "узнать",
+    "date_of_death": "узнать",
+    "children": [11],
+    "parents": [],
+    "partner": [20],
+    "line": "main"
+  },
+
+  {
+    "id": 22,
+    "name": "Афанасия",
+    "patronymic": "Максимовна",
+    "surname": "Петрова",
+    "generation": 5,
+    "firstSurname": "Плёнкина",
+    "gender": "female",
+    "date_of_birth": "приблизительно 1877",
+    "date_of_death": "27.10.1949",
+    "children": [12],
+    "parents": [],
+    "partner": [23],
+    "line": "main"
+  },
+
+  {
+    "id": 23,
+    "name": "Алексей",
+    "patronymic": "Степанович",
+    "surname": "Петров",
+    "generation": 5,
+    "firstSurname": null,
+    "gender": "male",
+    "date_of_birth": "приблизительно 1870",
+    "date_of_death": "03.02.1942",
+    "children": [12],
+    "parents": [],
+    "partner": [22],
+    "line": "main"
   }
-}
-
-{
-  "name": "Дмитрий",
-  "patronymic": "Валерьевич",
-  "surname": "Юновидов",
-  "generation": 1,
-  "gender": "male",
-  "date_of_birth": "19.11.1988",
-  "date_of_death": null,
-  "children": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "parents": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "partner": {
-
-  }
-}
-
-{
-  "name": "Алексей",
-  "patronymic": "Степанович",
-  "surname": "Петров",
-  "firstSurname": null,
-  "gender": "male",
-  "date_of_birth": "приблизительно 1870",
-  "date_of_death": "03.02.1942",
-  "children": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "parents": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "partner": {
-
-  }
-}
-
-{
-  "name": "Афанасия",
-  "patronymic": "Максимовна",
-  "surname": "Петрова",
-  "firstSurname": "Плёнкина",
-  "gender": "female",
-  "date_of_birth": "приблизительно 1877",
-  "date_of_death": "27.10.1949",
-  "children": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "parents": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "partner": {
-
-  }
-}
-
-{
-  "name": "Анна",
-  "patronymic": "Алексеевна",
-  "surname": "Безрукова",
-  "firstSurname": "Петрова",
-  "gender": "female",
-  "date_of_birth": "19.12.1907",
-  "date_of_death": "25.09.1999",
-  "children": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "parents": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "partner": {
-
-  }
-}
-
-{
-  "name": "Александр",
-  "patronymic": "Иванович",
-  "surname": "Безруков",
-  "firstSurname": null,
-  "gender": "male",
-  "date_of_birth": "приблизительно 1900",
-  "date_of_death": "27.10.1975",
-  "children": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "parents": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "partner": {
-
-  }
-}
-
-{
-  "name": "Евдокия",
-  "patronymic": "Алексеевна",
-  "surname": "Тверскова (Гольцова)",
-  "firstSurname": "Петрова",
-  "gender": "female",
-  "date_of_birth": "15.03.1916",
-  "date_of_death": "02.03.1995",
-  "children": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "parents": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "partner": {
-
-  }
-}
-
-{
-  "name": "Александр",
-  "patronymic": "неизвестно",
-  "surname": "Тверсков",
-  "firstSurname": null,
-  "gender": "male",
-  "date_of_birth": "неизвестно",
-  "date_of_death": "начало 1950-х",
-  "children": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "parents": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "partner": {
-
-  }
-}
-
-{
-  "name": "Пётр",
-  "patronymic": "Александрович",
-  "surname": "Тверсков",
-  "firstSurname": null,
-  "gender": "male",
-  "date_of_birth": "28.10.1948",
-  "date_of_death": "16.01.2005",
-  "children": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "parents": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "partner": {
-
-  }
-}
-
-{
-  "name": "Сергей",
-  "patronymic": "Александрович",
-  "surname": "Тверсков",
-  "firstSurname": null,
-  "gender": "male",
-  "date_of_birth": "лето 1946",
-  "date_of_death": "В 80-х, связь прекратилась",
-  "children": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "parents": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "partner": {
-
-  }
-}
-
-{
-  "name": "Михаил",
-  "patronymic": "Афанасьевич?",
-  "surname": "Гольцов",
-  "firstSurname": null,
-  "gender": "male",
-  "date_of_birth": "неизвестно",
-  "date_of_death": "примерно 1992 год",
-  "children": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "parents": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "partner": {
-
-  }
-}
-
-{
-  "name": "Александр",
-  "patronymic": "Алексеевич",
-  "surname": "Петров",
-  "firstSurname": null,
-  "gender": "male",
-  "date_of_birth": "12.09.1898",
-  "date_of_death": "13.01.1972",
-  "children": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "parents": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "partner": {
-
-  }
-}
-
-{
-  "name": "Елена",
-  "patronymic": "Тимофеевна",
-  "surname": "Петрова",
-  "firstSurname": "",
-  "gender": "female",
-  "date_of_birth": "03.06.1902",
-  "date_of_death": "03.08.1981",
-  "children": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "parents": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "partner": {
-
-  }
-}
-
-{
-  "name": "Владимир",
-  "patronymic": "Александрович",
-  "surname": "Петров",
-  "firstSurname": null,
-  "gender": "male",
-  "date_of_birth": "28.11.1924",
-  "date_of_death": "18.11.1990",
-  "children": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "parents": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "partner": {
-
-  }
-}
-
-{
-  "name": "Мария",
-  "patronymic": "Никифоровна",
-  "surname": "Петрова",
-  "firstSurname": "Донцова",
-  "gender": "female",
-  "date_of_birth": "02.01.1926",
-  "date_of_death": "23.02.2021",
-  "children": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "parents": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "partner": {
-
-  }
-}
-
-{
-  "name": "Наталья",
-  "patronymic": "Владимировна",
-  "surname": "",
-  "firstSurname": "Петрова",
-  "gender": "female",
-  "date_of_birth": "30.10.1948",
-  "date_of_death": "",
-  "children": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "parents": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "partner": {
-
-  }
-}
-
-{
-  "name": "Анатолий",
-  "patronymic": "Владимирович",
-  "surname": "Петров",
-  "firstSurname": null,
-  "gender": "male",
-  "date_of_birth": "21.07.1950",
-  "date_of_death": "",
-  "children": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "parents": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "partner": {
-
-  }
-}
-
-{
-  "name": "Вячеслав",
-  "patronymic": "Владимирович",
-  "surname": "Петров",
-  "firstSurname": null,
-  "gender": "male",
-  "date_of_birth": "13.06.1956",
-  "date_of_death": "12.12.1998",
-  "children": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "parents": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "partner": {
-
-  }
-}
-
-
-{
-  "name": "Георгий",
-  "patronymic": "Алексеевич",
-  "surname": "Петров",
-  "firstSurname": null,
-  "gender": "male",
-  "date_of_birth": "16.01.1910",
-  "date_of_death": "05.06.1980",
-  "children": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "parents": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "partner": {
-
-  }
-}
-
-{
-  "name": "Анна",
-  "patronymic": "Николаевна",
-  "surname": "Петрова",
-  "firstSurname": "Козлова",
-  "gender": "female",
-  "date_of_birth": "28.05.1917",
-  "date_of_death": "13.08.2006",
-  "children": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "parents": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "partner": {
-
-  }
-}
-
-{
-  "name": "Владимир",
-  "patronymic": "Георгиевич",
-  "surname": "Петров",
-  "firstSurname": null,
-  "gender": "male",
-  "date_of_birth": "25.04.1937",
-  "date_of_death": "25.05.2004",
-  "children": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "parents": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "partner": {
-
-  }
-}
-
-{
-  "name": "Нина",
-  "patronymic": "Георгиевна",
-  "surname": "Кузнецова",
-  "firstSurname": "Петрова",
-  "gender": "female",
-  "date_of_birth": "06.02.1941",
-  "date_of_death": "",
-  "children": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "parents": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "partner": {
-
-  }
-}
-
-{
-  "name": "Лидия",
-  "patronymic": "Георгиевна",
-  "surname": "Гнедкова",
-  "firstSurname": "Петрова",
-  "gender": "female",
-  "date_of_birth": "31.01.1944",
-  "date_of_death": "",
-  "children": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "parents": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "partner": {
-
-  }
-}
-
-{
-  "name": "Зоя",
-  "patronymic": "Георгиевна",
-  "surname": "Тарасова",
-  "firstSurname": "Петрова",
-  "gender": "female",
-  "date_of_birth": "13.10.1948",
-  "date_of_death": "14.01.2014",
-  "children": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "parents": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "partner": {
-
-  }
-}
-
-{
-  "name": "Вячеслав",
-  "patronymic": "Евгеньевич",
-  "surname": "Кузнецов",
-  "firstSurname": null,
-  "gender": "male",
-  "date_of_birth": "10.10.1939",
-  "date_of_death": "09.05.1985",
-  "children": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "parents": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "partner": {
-
-  }
-}
-
-{
-  "name": "Марина",
-  "patronymic": "Вячеславовна",
-  "surname": "Хасанова",
-  "firstSurname": "Кузнецова",
-  "gender": "female",
-  "date_of_birth": "31.03.1965",
-  "date_of_death": "",
-  "children": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "parents": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "partner": {
-
-  }
-}
-
-{
-  "name": "Алла",
-  "patronymic": "Вячеславовна",
-  "surname": "Сидорова",
-  "firstSurname": "Кузнецова (Мифтахова)",
-  "gender": "female",
-  "date_of_birth": "26.06.1971",
-  "date_of_death": "",
-  "children": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "parents": [
-    {
-
-    },
-    {
-
-    }
-  ],
-  "partner": {
-
-  }
-}
+]
