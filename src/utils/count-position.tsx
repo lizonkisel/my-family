@@ -1,75 +1,40 @@
-// let dataForNodes;
-interface IMainPersonData {
-  id: number;
-  name: string;
-  patronymic: string;
-  surname: string;
-  generation: number;
-  gender: "female" | "male";
-  date_of_birth: string;
-  date_of_death: string | null;
-  children: number[];
-  parents: number[];
-  partner: number[];
-  line: "main";
-}
+import type {
+  IPersonYData,
+  IPersonAllData,
+  IGenerationsObj
+} from "./interfaces";
 
-interface IPersonYNode {
-  id: `node-${number}`;
-  type: "textUpdater";
-  position: { x: 0; y: number };
-  data: {
-    personName: string;
-    date: string;
-  };
-}
+import getConnections from "./utils";
 
-interface IPersonNode {
-  id: `node-${number}`;
-  type: "textUpdater";
-  position: { x: number; y: number };
-  data: {
-    personName: string;
-    date: string;
-  };
-}
+const calculateYCoordinates = (data: IGenerationsObj) => {
+  // Создам глубокую копию исходных данных
+  const copyData = JSON.parse(JSON.stringify(data));
+  const keys = Object.keys(copyData);
 
-interface IPersonYData extends IMainPersonData {
-  nodeData: IPersonYNode;
-}
-
-interface IPersonAllData extends IMainPersonData {
-  nodeData: IPersonNode;
-}
-
-interface IGenerationsObj {
-  [key: `gen-${number}`]: IMainPersonData[];
-}
-
-const getConnections = (person: IPersonYData) => {
-  const children = person.children.filter((number) => {
-    /* eslint-disable-next-line */
-    return !isNaN(Number(number));
+  keys.forEach((key: string) => {
+    const currGen = copyData[key];
+    for (let j = 0; j < currGen.length; j++) {
+      const xCoor = 0;
+      const yCoor = 400 * currGen[j].generation;
+      const nodeData = {
+        id: `node-${currGen[j].id}`,
+        type: "textUpdater",
+        position: { x: xCoor, y: yCoor },
+        data: {
+          personName: `${currGen[j].name} ${currGen[j].patronymic} ${currGen[j].surname}`,
+          date: `${currGen[j].date_of_birth} - ${currGen[j].date_of_death}`
+        }
+      };
+      currGen[j].nodeData = nodeData;
+    }
   });
-  const parents = person.parents.filter((number) => {
-    /* eslint-disable-next-line */
-    return !isNaN(Number(number));
-  });
-
-  const partner = person.partner.filter((number) => {
-    /* eslint-disable-next-line */
-    return !isNaN(Number(number));
-  });
-
-  const connections = children.concat(parents, partner);
-  return connections;
+  return copyData;
 };
 
 const countXNodes = (nodesYData: IPersonYData[]) => {
-  const repeatInerationArr: any = [];
-  const nodesArr: any = [];
+  const repeatInerationArr: IPersonYData[] = [];
+  const nodesArr: IPersonAllData[] = [];
 
-  // const nodesArr: IPersonAllData[] = nodesYData.map((person) => {
   nodesYData.forEach((person) => {
     let xCoor = 0;
     const id = person.id;
@@ -79,7 +44,7 @@ const countXNodes = (nodesYData: IPersonYData[]) => {
     } else {
       const connections = getConnections(person);
 
-      const prevNumber = connections.find((elem) => {
+      const prevNumber = connections.find((elem: any) => {
         return elem < person.id;
       });
 
@@ -153,7 +118,7 @@ const countXNodes = (nodesYData: IPersonYData[]) => {
 
   console.log(repeatInerationArr);
 
-  repeatInerationArr.forEach((person: any) => {
+  repeatInerationArr.forEach((person: IPersonYData) => {
     let xCoor;
     const prevNumber = getConnections(person)[0];
 
@@ -183,30 +148,5 @@ const countXNodes = (nodesYData: IPersonYData[]) => {
   return nodesArr;
 };
 
-const calculateYCoordinates = (data: IGenerationsObj) => {
-  // Создам глубокую копию исходных данных
-  const copyData = JSON.parse(JSON.stringify(data));
-  const keys = Object.keys(copyData);
-
-  keys.forEach((key: any) => {
-    const currGen = copyData[key];
-    for (let j = 0; j < currGen.length; j++) {
-      const xCoor = 0;
-      const yCoor = 400 * currGen[j].generation;
-      const nodeData = {
-        id: `node-${currGen[j].id}`,
-        type: "textUpdater",
-        position: { x: xCoor, y: yCoor },
-        data: {
-          personName: `${currGen[j].name} ${currGen[j].patronymic} ${currGen[j].surname}`,
-          date: `${currGen[j].date_of_birth} - ${currGen[j].date_of_death}`
-        }
-      };
-      currGen[j].nodeData = nodeData;
-    }
-  });
-  return copyData;
-};
-
 /* eslint-disable-next-line */
-export { calculateYCoordinates, countXNodes, getConnections };
+export { calculateYCoordinates, countXNodes };

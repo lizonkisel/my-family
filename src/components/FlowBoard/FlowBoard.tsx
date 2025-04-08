@@ -13,9 +13,9 @@ import NodePerson from "../Person/NodePerson";
 import data from "../../data/data.json";
 import {
   createNodesData,
-  returnNodesAllData,
+  getNodesAllData,
   createEdges
-} from "../../utils/utils";
+} from "../../utils/create-nodes-edges";
 
 // const initialNodes = [
 //   {
@@ -32,15 +32,6 @@ import {
 //   }
 // ];
 
-const initialNodes = createNodesData(data);
-// console.log(initialNodes);
-
-const nodesAllData = returnNodesAllData();
-console.log(nodesAllData);
-
-const initialEdges = createEdges(nodesAllData);
-// console.log(edges);
-
 // const initialEdges = [
 //   {
 //     id: "e1-2",
@@ -50,7 +41,12 @@ const initialEdges = createEdges(nodesAllData);
 //   // { id: "e2-3", source: "2", target: "3", animated: true },
 // ];
 
-// const initialEdges = createEdges();
+const initialNodes = createNodesData(data);
+
+const nodesAllData = getNodesAllData();
+console.log(nodesAllData);
+
+const initialEdges = createEdges(nodesAllData);
 
 // we define the nodeTypes outside of the component to prevent re-renderings
 // you could also use useMemo inside the component
