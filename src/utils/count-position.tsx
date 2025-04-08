@@ -93,15 +93,15 @@ const countXNodes = (nodesYData: IPersonYData[]) => {
               // мама девочки
               xCoor =
                 nodesArr[prevNumber].nodeData.position.x -
-                600 +
-                (1 / person.generation) * 100;
+                800 -
+                (1 / (person.generation + 1)) * 800;
               console.log(1.1);
             } else {
               // мама мальчика
               xCoor =
                 nodesArr[prevNumber].nodeData.position.x -
-                500 +
-                (1 / person.generation) * 600;
+                0 -
+                (1 / (person.generation + 1)) * 800;
               console.log(1.2);
             }
           } else {
@@ -109,15 +109,15 @@ const countXNodes = (nodesYData: IPersonYData[]) => {
               // папа девочки
               xCoor =
                 nodesArr[prevNumber].nodeData.position.x +
-                600 -
-                (1 / person.generation) * 100;
+                0 +
+                (1 / (person.generation + 1)) * 800;
               console.log(2.1);
             } else {
               // папа мальчика
               xCoor =
                 nodesArr[prevNumber].nodeData.position.x +
-                500 -
-                (1 / person.generation) * 600;
+                800 +
+                (1 / (person.generation + 1)) * 800;
               console.log(2.2);
             }
           }
@@ -163,10 +163,13 @@ const countXNodes = (nodesYData: IPersonYData[]) => {
         nodesArr[prevNumber].id === person.children[1]
       ) {
         xCoor = nodesArr[prevNumber].nodeData.position.x + 200;
+        console.log(4);
       } else if (nodesArr[prevNumber].id === person.partner[0]) {
-        xCoor = nodesArr[prevNumber].nodeData.position.x - 200;
+        xCoor = nodesArr[prevNumber].nodeData.position.x - 1000;
+        console.log(5);
       } else {
-        xCoor = 10;
+        xCoor = -800;
+        console.log(6);
       }
     } else {
       xCoor = -900;
