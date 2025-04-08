@@ -1,4 +1,10 @@
-import { calculateYCoordinates, countXNodes } from "./count-position";
+import {
+  calculateYCoordinates,
+  countXNodes,
+  getConnections
+} from "./count-position";
+
+let nodesAllData: any;
 
 // 0. Пока не смотрела, зачем эта функция. Но она вызывается в createNodesWithAllInfo.
 const arrCommonFunc = (data: any) => {
@@ -111,6 +117,7 @@ const createNodesData = (wetData: any) => {
 
   nodesArr = countXNodes(nodesYArr);
 
+  nodesAllData = nodesArr;
   console.log(nodesArr);
 
   const initialNodes = nodesArr.map((person: any) => {
@@ -121,6 +128,10 @@ const createNodesData = (wetData: any) => {
   console.log(initialNodes);
 
   return initialNodes;
+};
+
+const returnNodesAllData = () => {
+  return nodesAllData;
 };
 
 // Где-то надо добавить функция задания связей между карточками
@@ -151,5 +162,34 @@ const createNodesData = (wetData: any) => {
 //   })
 // };
 
+const createEdges = (nodes: any) => {
+  const edgesArr = nodes.map((node: any) => {
+    const connections = getConnections(node);
+
+    const personEdgesArr: any = [];
+
+    connections.forEach((connection) => {
+      if (connection > node.id) {
+        const edgesData = {
+          id: `e${node.id}-${connection}`,
+          type: "bezier",
+          source: `node-${node.id}`,
+          target: `node-${connection}`
+        };
+
+        personEdgesArr.push(edgesData);
+      }
+    });
+
+    return personEdgesArr;
+  });
+
+  const finalEdgesArr = edgesArr.reduce((a: any, b: any) => {
+    return a.concat(b);
+  });
+
+  return finalEdgesArr;
+};
+
 /* eslint-disable-next-line */
-export { createNodesData }
+export { createNodesData, returnNodesAllData, createEdges }

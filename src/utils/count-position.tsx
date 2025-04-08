@@ -183,17 +183,6 @@ const countXNodes = (nodesYData: IPersonYData[]) => {
   return nodesArr;
 };
 
-// const countY = (person: IMainPersonData, j: number) => {
-//   let yCoor = 0;
-
-//   if (j === 0) {
-//     yCoor = 0;
-//     return yCoor;
-//   }
-//   yCoor = 400 * person.generation;
-//   return yCoor;
-// };
-
 const calculateYCoordinates = (data: IGenerationsObj) => {
   // Создам глубокую копию исходных данных
   const copyData = JSON.parse(JSON.stringify(data));
@@ -220,4 +209,4 @@ const calculateYCoordinates = (data: IGenerationsObj) => {
 };
 
 /* eslint-disable-next-line */
-export { calculateYCoordinates, countXNodes };
+export { calculateYCoordinates, countXNodes, getConnections };

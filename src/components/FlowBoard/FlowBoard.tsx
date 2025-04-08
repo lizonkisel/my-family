@@ -11,7 +11,11 @@ import "../Person/Person.scss";
 import NodePerson from "../Person/NodePerson";
 
 import data from "../../data/data.json";
-import { createNodesData } from "../../utils/utils";
+import {
+  createNodesData,
+  returnNodesAllData,
+  createEdges
+} from "../../utils/utils";
 
 // const initialNodes = [
 //   {
@@ -31,14 +35,23 @@ import { createNodesData } from "../../utils/utils";
 const initialNodes = createNodesData(data);
 // console.log(initialNodes);
 
-const initialEdges = [
-  {
-    id: "e1-2",
-    source: "node-1",
-    target: "node-2"
-  }
-  // { id: "e2-3", source: "2", target: "3", animated: true },
-];
+const nodesAllData = returnNodesAllData();
+console.log(nodesAllData);
+
+const initialEdges = createEdges(nodesAllData);
+// console.log(edges);
+
+// const initialEdges = [
+//   {
+//     id: "e1-2",
+//     source: "node-1",
+//     target: "node-2"
+//   }
+//   // { id: "e2-3", source: "2", target: "3", animated: true },
+// ];
+
+// const initialEdges = createEdges();
+
 // we define the nodeTypes outside of the component to prevent re-renderings
 // you could also use useMemo inside the component
 const nodeTypes = { textUpdater: NodePerson };
