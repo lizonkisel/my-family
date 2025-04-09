@@ -31,6 +31,7 @@ function NodePerson({
         type="target"
         isConnectableStart={false}
         position={Position.Top}
+        id="child"
         isConnectable={isConnectable}
       />
       <section className="person">
@@ -39,9 +40,21 @@ function NodePerson({
         <span className="person__date">{date}</span>
       </section>
       <Handle
+        type="target"
+        position={Position.Left}
+        id="man_partner"
+        isConnectable={isConnectable}
+      />
+      <Handle
+        type="source"
+        position={Position.Right}
+        id="woman_partner"
+        isConnectable={isConnectable}
+      />
+      <Handle
         type="source"
         position={Position.Bottom}
-        id="b"
+        id="parent"
         isConnectable={isConnectable}
       />
     </div>

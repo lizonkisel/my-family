@@ -1,3 +1,5 @@
+import { Position } from "reactflow";
+
 interface IMainPersonData {
   id: number;
   name: string;
@@ -21,6 +23,8 @@ interface IPersonYNode {
     personName: string;
     date: string;
   };
+  sourcePosition?: Position;
+  targetPosition?: Position;
 }
 
 interface IPersonNode {
@@ -31,6 +35,8 @@ interface IPersonNode {
     personName: string;
     date: string;
   };
+  sourcePosition?: Position;
+  targetPosition?: Position;
 }
 
 interface IPersonYData extends IMainPersonData {
@@ -50,6 +56,13 @@ interface INodeEdges {
   type: "straight" | "step" | "smoothstep" | "bezier";
   source: `node-${number}`;
   target: `node-${number}`;
+  sourceHandle?: string | null;
+  targetHandle?: string | null;
 }
-
-export type { IPersonYData, IPersonAllData, IGenerationsObj, INodeEdges };
+export type {
+  IPersonYData,
+  IPersonAllData,
+  IGenerationsObj,
+  INodeEdges,
+  IPersonNode
+};

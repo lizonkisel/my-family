@@ -1,7 +1,9 @@
+import { Position } from "reactflow";
 import type {
   IPersonYData,
   IPersonAllData,
-  IGenerationsObj
+  IGenerationsObj,
+  IPersonNode
 } from "./interfaces";
 
 import getConnections from "./utils";
@@ -16,14 +18,16 @@ const calculateYCoordinates = (data: IGenerationsObj) => {
     for (let j = 0; j < currGen.length; j++) {
       const xCoor = 0;
       const yCoor = 400 * currGen[j].generation;
-      const nodeData = {
+      const nodeData: IPersonNode = {
         id: `node-${currGen[j].id}`,
         type: "textUpdater",
         position: { x: xCoor, y: yCoor },
         data: {
           personName: `${currGen[j].name} ${currGen[j].patronymic} ${currGen[j].surname}`,
           date: `${currGen[j].date_of_birth} - ${currGen[j].date_of_death}`
-        }
+        },
+        sourcePosition: Position.Left,
+        targetPosition: Position.Right
       };
       currGen[j].nodeData = nodeData;
     }
@@ -58,15 +62,15 @@ const countXNodes = (nodesYData: IPersonYData[]) => {
               // мама девочки
               xCoor =
                 nodesArr[prevNumber].nodeData.position.x -
-                800 -
-                (1 / (person.generation + 1)) * 800;
+                400 -
+                (1 / (person.generation + 1)) * 1200;
               console.log(1.1);
             } else {
               // мама мальчика
               xCoor =
                 nodesArr[prevNumber].nodeData.position.x -
                 0 -
-                (1 / (person.generation + 1)) * 800;
+                (1 / (person.generation + 1)) * 200;
               console.log(1.2);
             }
           } else {
@@ -75,14 +79,14 @@ const countXNodes = (nodesYData: IPersonYData[]) => {
               xCoor =
                 nodesArr[prevNumber].nodeData.position.x +
                 0 +
-                (1 / (person.generation + 1)) * 800;
+                (1 / (person.generation + 1)) * 1200;
               console.log(2.1);
             } else {
               // папа мальчика
               xCoor =
                 nodesArr[prevNumber].nodeData.position.x +
-                800 +
-                (1 / (person.generation + 1)) * 800;
+                0 +
+                (1 / (person.generation + 1)) * 1600;
               console.log(2.2);
             }
           }
