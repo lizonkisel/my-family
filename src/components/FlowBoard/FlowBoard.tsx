@@ -85,6 +85,7 @@ function FlowBoard() {
       onEdgesChange={onEdgesChange}
       onConnect={onConnect}
       nodeTypes={nodeTypes}
+      nodesDraggable={false}
       fitView
       // style={rfStyle}
     />

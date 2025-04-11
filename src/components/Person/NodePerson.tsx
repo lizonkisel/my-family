@@ -1,5 +1,6 @@
 import React from "react";
 import { Handle, Position } from "reactflow";
+import useImage from "../../utils/useImage";
 import "./Person.scss";
 
 // interface IPerson {
@@ -25,6 +26,10 @@ function NodePerson({
   },
   isConnectable
 }: IPerson) {
+  // Возможно, тут стоит всё же навесить обработчик ошибок. Для этого пригодятся все переменные из хука:
+  // const { loading, error, image } = useImage(fileName)
+  const { image } = useImage(imageLink);
+
   return (
     <div>
       <Handle
@@ -35,7 +40,7 @@ function NodePerson({
         isConnectable={isConnectable}
       />
       <section className="person">
-        <img className="person__image" src={imageLink} alt="person" />
+        <img className="person__image" src={image} alt="person" />
         <span className="person__name">{personName}</span>
         <span className="person__date">{date}</span>
       </section>

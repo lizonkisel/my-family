@@ -13,6 +13,7 @@ interface IMainPersonData {
   parents: number[];
   partner: number[];
   line: "main";
+  main_image: string;
 }
 
 interface IPersonYNode {
@@ -20,6 +21,7 @@ interface IPersonYNode {
   type: "textUpdater";
   position: { x: 0; y: number };
   data: {
+    imageLink: string;
     personName: string;
     date: string;
   };
@@ -32,6 +34,7 @@ interface IPersonNode {
   type: "textUpdater";
   position: { x: number; y: number };
   data: {
+    imageLink: string;
     personName: string;
     date: string;
   };

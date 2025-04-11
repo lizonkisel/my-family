@@ -11,7 +11,8 @@
     "children": [],
     "parents": [2, 3],
     "partner": [],
-    "line": "main"
+    "line": "main",
+    "main_image": "Iura/main.jpg"
   },
 
   {
@@ -26,7 +27,8 @@
     "children": [],
     "parents": [2, 3],
     "partner": [],
-    "line": "main"
+    "line": "main",
+    "main_image": ""
   },
 
   {
@@ -42,7 +44,8 @@
     "children": [0, 1],
     "parents": [5, 6],
     "partner": [3],
-    "line": "main"
+    "line": "main",
+    "main_image": ""
   },
 
   {
@@ -57,7 +60,8 @@
     "children": [0, 1],
     "parents": [],
     "partner": [2],
-    "line": "main"
+    "line": "main",
+    "main_image": ""
   },
 
   {
@@ -72,7 +76,8 @@
     "children": [],
     "parents": [5, 6],
     "partner": [],
-    "line": "second"
+    "line": "second",
+    "main_image": "Misha/main.jpg"
   },
 
   {
@@ -88,7 +93,8 @@
     "children": [2, 4],
     "parents": [7, 8],
     "partner": [6],
-    "line": "main"
+    "line": "main",
+    "main_image": ""
   },
 
   {
@@ -103,7 +109,8 @@
     "children": [2, 4],
     "parents": [9, 10],
     "partner": [5],
-    "line": "main"
+    "line": "main",
+    "main_image": ""
   },
 
   {
@@ -119,7 +126,8 @@
     "children": [5],
     "parents": [11, 12],
     "partner": [8],
-    "line": "main"
+    "line": "main",
+    "main_image": ""
   },
 
   {
@@ -135,7 +143,8 @@
     "children": [5],
     "parents": [13, 15],
     "partner": [7],
-    "line": "main"
+    "line": "main",
+    "main_image": ""
   },
 
   {
@@ -151,7 +160,8 @@
     "children": [6],
     "parents": [16, 17],
     "partner": [10],
-    "line": "main"
+    "line": "main",
+    "main_image": ""
   },
 
   {
@@ -166,7 +176,8 @@
     "children": [6],
     "parents": [18, 19],
     "partner": [9],
-    "line": "main"
+    "line": "main",
+    "main_image": ""
   },
 
   {
@@ -182,7 +193,8 @@
     "children": [7],
     "parents": [20, 21],
     "partner": [12],
-    "line": "main"
+    "line": "main",
+    "main_image": ""
   },
 
   {
@@ -198,7 +210,8 @@
     "children": [7],
     "parents": [22, 23],
     "partner": [11],
-    "line": "main"
+    "line": "main",
+    "main_image": ""
   },
 
   {
@@ -214,7 +227,8 @@
     "children": [8],
     "parents": [],
     "partner": [15],
-    "line": "main"
+    "line": "main",
+    "main_image": ""
   },
 
   {
@@ -230,7 +244,8 @@
     "children": [],
     "parents": [],
     "partner": [15],
-    "line": "main"
+    "line": "main",
+    "main_image": ""
   },
 
   {
@@ -246,7 +261,8 @@
     "children": [8],
     "parents": [],
     "partner": [13, 14],
-    "line": "main"
+    "line": "main",
+    "main_image": ""
   },
 
 
@@ -264,7 +280,8 @@
     "children": [9],
     "parents": [],
     "partner": [17],
-    "line": "main"
+    "line": "main",
+    "main_image": ""
   },
 
   {
@@ -279,7 +296,8 @@
     "children": [9],
     "parents": [],
     "partner": [16],
-    "line": "main"
+    "line": "main",
+    "main_image": ""
   },
 
   {
@@ -295,7 +313,8 @@
     "children": [10],
     "parents": [],
     "partner": [19],
-    "line": "main"
+    "line": "main",
+    "main_image": ""
   },
 
   {
@@ -310,7 +329,8 @@
     "children": [10],
     "parents": [],
     "partner": [18],
-    "line": "main"
+    "line": "main",
+    "main_image": ""
   },
 
   {
@@ -326,7 +346,8 @@
     "children": [11],
     "parents": [],
     "partner": [21],
-    "line": "main"
+    "line": "main",
+    "main_image": ""
   },
 
   {
@@ -342,7 +363,8 @@
     "children": [11],
     "parents": [],
     "partner": [20],
-    "line": "main"
+    "line": "main",
+    "main_image": ""
   },
 
   {
@@ -358,7 +380,8 @@
     "children": [12],
     "parents": [],
     "partner": [23],
-    "line": "main"
+    "line": "main",
+    "main_image": ""
   },
 
   {
@@ -374,6 +397,7 @@
     "children": [12],
     "parents": [],
     "partner": [22],
-    "line": "main"
+    "line": "main",
+    "main_image": ""
   }
 ]
