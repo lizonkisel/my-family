@@ -28,7 +28,7 @@
     "parents": [2, 3],
     "partner": [],
     "line": "main",
-    "main_image": ""
+    "main_image": "Valera/main.jpg"
   },
 
   {
@@ -45,7 +45,7 @@
     "parents": [5, 6],
     "partner": [3],
     "line": "main",
-    "main_image": ""
+    "main_image": "Liza/main.jpg"
   },
 
   {
@@ -61,7 +61,7 @@
     "parents": [],
     "partner": [2],
     "line": "main",
-    "main_image": ""
+    "main_image": "Dima/main.jpg"
   },
 
   {
@@ -94,7 +94,7 @@
     "parents": [7, 8],
     "partner": [6],
     "line": "main",
-    "main_image": ""
+    "main_image": "Alla/main.jpg"
   },
 
   {
@@ -110,7 +110,7 @@
     "parents": [9, 10],
     "partner": [5],
     "line": "main",
-    "main_image": ""
+    "main_image": "Evgenii/main.jpg"
   },
 
   {
@@ -127,7 +127,7 @@
     "parents": [11, 12],
     "partner": [8],
     "line": "main",
-    "main_image": ""
+    "main_image": "Nina/main.jpg"
   },
 
   {
@@ -144,7 +144,7 @@
     "parents": [13, 15],
     "partner": [7],
     "line": "main",
-    "main_image": ""
+    "main_image": "Slava/main.jpg"
   },
 
   {
@@ -194,7 +194,7 @@
     "parents": [20, 21],
     "partner": [12],
     "line": "main",
-    "main_image": ""
+    "main_image": "Nurochka/main.jpg"
   },
 
   {
@@ -211,7 +211,7 @@
     "parents": [22, 23],
     "partner": [11],
     "line": "main",
-    "main_image": ""
+    "main_image": "Georgii/main.jpg"
   },
 
   {
@@ -347,7 +347,7 @@
     "parents": [],
     "partner": [21],
     "line": "main",
-    "main_image": ""
+    "main_image": "AgrippinaKozlova/main.jpg"
   },
 
   {
@@ -381,7 +381,7 @@
     "parents": [],
     "partner": [23],
     "line": "main",
-    "main_image": ""
+    "main_image": "AfanasiaPetrova/main.jpg"
   },
 
   {
@@ -398,6 +398,6 @@
     "parents": [],
     "partner": [22],
     "line": "main",
-    "main_image": ""
+    "main_image": "AlekseiPetrov/main.jpg"
   }
 ]
