@@ -23,6 +23,7 @@ const calculateYCoordinates = (data: IGenerationsObj) => {
         type: "textUpdater",
         position: { x: xCoor, y: yCoor },
         data: {
+          id: currGen[j].id,
           imageLink: `${currGen[j].main_image}`,
           personName: `${currGen[j].name} ${currGen[j].patronymic} ${currGen[j].surname}`,
           date: `${currGen[j].date_of_birth} - ${currGen[j].date_of_death}`
