@@ -21,6 +21,7 @@ interface IPersonYNode {
   type: "textUpdater";
   position: { x: 0; y: number };
   data: {
+    id: number;
     imageLink: string;
     personName: string;
     date: string;
@@ -34,6 +35,7 @@ interface IPersonNode {
   type: "textUpdater";
   position: { x: number; y: number };
   data: {
+    id: number;
     imageLink: string;
     personName: string;
     date: string;

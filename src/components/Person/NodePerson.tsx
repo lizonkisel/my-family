@@ -11,25 +11,29 @@ import "./Person.scss";
 
 interface IPerson {
   data: {
+    id: number;
     imageLink?: string;
     personName?: string;
     date?: string;
+    // onClick: () => any;
   };
   isConnectable: any;
 }
 
 function NodePerson({
   data: {
+    id,
     imageLink = "https://www.coloradospecialties.com/wp-content/uploads/2013/12/Person.Ashley.jpg",
     personName = "Иван Иванович Иванов",
     date = "01.01.1900 - 12.12.1999"
+    // onClick
   },
   isConnectable
 }: IPerson) {
   // Возможно, тут стоит всё же навесить обработчик ошибок. Для этого пригодятся все переменные из хука:
   // const { loading, error, image } = useImage(fileName)
   const { image } = useImage(imageLink);
-
+  console.log(id);
   return (
     <div>
       <Handle
