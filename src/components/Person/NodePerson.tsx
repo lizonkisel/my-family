@@ -2,6 +2,8 @@ import React from "react";
 import { Handle, Position } from "reactflow";
 import useImage from "../../utils/useImage";
 import "./Person.scss";
+import { useAppDispatch } from "../../services/app/hooks";
+import { setActiveCard } from "../../services/slices/activeCardSlice";
 
 // interface IPerson {
 //   imageLink?: string;
@@ -30,10 +32,20 @@ function NodePerson({
   },
   isConnectable
 }: IPerson) {
+  const dispatch = useAppDispatch();
+  const sectionRef = React.useRef(null);
+
   // Возможно, тут стоит всё же навесить обработчик ошибок. Для этого пригодятся все переменные из хука:
   // const { loading, error, image } = useImage(fileName)
   const { image } = useImage(imageLink);
+
   console.log(id);
+
+  const handleClick = () => {
+    console.log("azaza");
+    dispatch(setActiveCard(id));
+  };
+
   return (
     <div>
       <Handle
@@ -43,7 +55,8 @@ function NodePerson({
         id="child"
         isConnectable={isConnectable}
       />
-      <section className="person">
+      {/* eslint-disable-next-line */}
+      <section className="person" ref={sectionRef} onClick={handleClick}>
         <img className="person__image" src={image} alt="person" />
         <span className="person__name">{personName}</span>
         <span className="person__date">{date}</span>
