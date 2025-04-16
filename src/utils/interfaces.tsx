@@ -65,6 +65,7 @@ interface INodeEdges {
   targetHandle?: string | null;
 }
 export type {
+  IMainPersonData,
   IPersonYData,
   IPersonAllData,
   IGenerationsObj,

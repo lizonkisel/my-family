@@ -16,6 +16,9 @@ import {
   getNodesAllData,
   createEdges
 } from "../../utils/create-nodes-edges";
+import { useAppDispatch } from "../../services/app/hooks";
+import { addMultipleNodes } from "../../services/slices/nodesSlice";
+import { addMultipleEdges } from "../../services/slices/edgesSlice";
 
 // const initialNodes = [
 //   {
@@ -53,8 +56,13 @@ const initialEdges = createEdges(nodesAllData);
 const nodeTypes = { textUpdater: NodePerson };
 
 function FlowBoard() {
+  const dispatch = useAppDispatch();
+
   const [nodes, setNodes] = useState(initialNodes);
   const [edges, setEdges] = useState(initialEdges);
+
+  dispatch(addMultipleNodes(nodes));
+  dispatch(addMultipleEdges(edges));
 
   // console.log(nodes);
   // console.log(edges);
