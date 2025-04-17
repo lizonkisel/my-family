@@ -1,22 +1,31 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from "../app/store";
 
-const initialState: number = -1;
+interface IState {
+  value: number | undefined;
+}
+
+// const initialState: number | undefined = undefined;
+const initialState: IState = { value: undefined };
 
 const activeCardSlice = createSlice({
   name: "activeCard",
   initialState,
   reducers: {
-    setActiveCard(state, action: PayloadAction<number>) {
+    setActiveCard(state, action: PayloadAction<number | undefined>) {
       /* eslint-disable-next-line */
-      state = action.payload;
+      state.value = action.payload;
       return state;
     },
-    getActiveCard(state) {
-      return state;
+    deleteActiveCard(state) {
+      /* eslint-disable-next-line */
+      state.value = undefined;
     }
   }
 });
 
-export const { setActiveCard, getActiveCard } = activeCardSlice.actions;
+export const getActiveCard = (state: RootState) => state.activeCard.value;
+
+export const { setActiveCard, deleteActiveCard } = activeCardSlice.actions;
 
 export default activeCardSlice.reducer;
