@@ -3,6 +3,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IMainPersonData } from "../../utils/interfaces";
 
 import data from "../../data/data.json";
+import { RootState } from "../app/store";
 
 // const initialState: Post[] = [
 //   { id: '1', title: 'First Post!', content: 'Hello!' },
@@ -27,6 +28,11 @@ const personsSlice = createSlice({
     }
   }
 });
+
+export const getPerson = (state: RootState, personId: number) => {
+  const person = state.persons.filter((man) => man.id === personId)[0];
+  return person;
+};
 
 export const { postAdded } = personsSlice.actions;
 

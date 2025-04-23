@@ -7,3 +7,47 @@
   height: 30%;
   background-color: aqua;
 }
+
+.card {
+  width: 80%;
+  height: 80%;
+  border-radius: 20px;
+  // background-color: #f28705;
+  // background-color: #fff0d4;
+  // background-color: #ff9e00;
+  background-color: #ff9400;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+
+  padding: 5%;
+}
+
+.card__mainInfo {
+  max-width: 40%;
+}
+
+.person__main {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 8px;
+
+  row-gap: 12px;
+}
+
+.person__surname {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.person__img {
+  width: 60%;
+  border-radius: 20px;
+
+}
+
+.card__description {
+  width: 60%;
+}
