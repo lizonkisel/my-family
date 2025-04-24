@@ -1,4 +1,5 @@
 import React from "react";
+import { v4 } from "uuid";
 import "./CardDescription.scss";
 import descriptions from "../../data/description.json";
 
@@ -9,7 +10,9 @@ export default function CardDescription({ personId }: { personId: number }) {
 
   if (currentDesc) {
     const listItems = currentDesc.map((desc) => (
-      <p className="description__elem">{desc}</p>
+      <p className="description__elem" key={v4()}>
+        {desc}
+      </p>
     ));
     return <div className="card__description">{listItems}</div>;
   }

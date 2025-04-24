@@ -9,9 +9,13 @@ import {
 import { useAppSelector, useAppDispatch } from "../../services/app/hooks";
 
 export default function CardWrapper() {
+  // let activeCard;
+  // useEffect(() => {
+  //   activeCard = useAppSelector(getActiveCard);
+  // }, []);
+
   const activeCard = useAppSelector(getActiveCard);
   const dispatch = useAppDispatch();
-  console.log(activeCard);
 
   const closePopup = () => {
     dispatch(setActiveCard(undefined));

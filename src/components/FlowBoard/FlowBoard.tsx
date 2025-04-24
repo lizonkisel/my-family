@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import ReactFlow, {
   addEdge,
   applyEdgeChanges,
@@ -62,9 +62,11 @@ function FlowBoard() {
   const [nodes, setNodes] = useState(initialNodes);
   const [edges, setEdges] = useState(initialEdges);
 
-  dispatch(setPersons(nodesAllData));
-  dispatch(addMultipleNodes(nodes));
-  dispatch(addMultipleEdges(edges));
+  useEffect(() => {
+    dispatch(setPersons(nodesAllData));
+    dispatch(addMultipleNodes(nodes));
+    dispatch(addMultipleEdges(edges));
+  }, []);
 
   // console.log(nodes);
   // console.log(edges);
