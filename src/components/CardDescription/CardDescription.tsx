@@ -8,8 +8,10 @@ export default function CardDescription({ personId }: { personId: number }) {
   })?.description;
 
   if (currentDesc) {
-    const listItems = currentDesc.map((desc) => <p>{desc}</p>);
-    return <div>{listItems}</div>;
+    const listItems = currentDesc.map((desc) => (
+      <p className="description__elem">{desc}</p>
+    ));
+    return <div className="card__description">{listItems}</div>;
   }
 
   return <p>К сожалению, мы пока ничего не знаем об этом человеке</p>;

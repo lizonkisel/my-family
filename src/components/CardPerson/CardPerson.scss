@@ -10,7 +10,7 @@
 
 .card {
   width: 80%;
-  height: 80%;
+  max-height: 60%;
   border-radius: 20px;
   // background-color: #f28705;
   // background-color: #fff0d4;
@@ -20,11 +20,15 @@
   display: flex;
   flex-direction: row;
 
-  padding: 5%;
+  // padding: 5%;
+  padding: 5% 5% 5% 0;
 }
 
 .card__mainInfo {
   max-width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .person__main {
@@ -43,11 +47,8 @@
 }
 
 .person__img {
-  width: 60%;
+  max-width: 60%;
+  max-height: 80%;
   border-radius: 20px;
 
-}
-
-.card__description {
-  width: 60%;
 }
