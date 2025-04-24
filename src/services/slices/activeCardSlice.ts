@@ -3,9 +3,10 @@ import { RootState } from "../app/store";
 
 interface IState {
   value: number | undefined;
+  // description: string[];
 }
 
-// const initialState: number | undefined = undefined;
+// const initialState: IState = { value: undefined, description: [] };
 const initialState: IState = { value: undefined };
 
 const activeCardSlice = createSlice({
@@ -17,6 +18,9 @@ const activeCardSlice = createSlice({
       state.value = action.payload;
       return state;
     },
+    // setCardDesc(state, action: PayloadAction<string[]>) {
+
+    // },
     deleteActiveCard(state) {
       /* eslint-disable-next-line */
       state.value = undefined;
