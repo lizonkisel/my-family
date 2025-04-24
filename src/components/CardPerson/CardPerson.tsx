@@ -3,6 +3,7 @@ import "./CardPerson.scss";
 import { useAppSelector } from "../../services/app/hooks";
 import { getPerson } from "../../services/slices/personsSlice";
 import useImage from "../../utils/useImage";
+import CardDescription from "../CardDescription/CardDescription";
 
 export default function CardPerson({ personId }: { personId: number }) {
   const person = useAppSelector((state) => getPerson(state, personId));
@@ -23,9 +24,7 @@ export default function CardPerson({ personId }: { personId: number }) {
           </span>
         </div>
       </section>
-      <section className="card__description">
-        <p>Azaza</p>
-      </section>
+      <CardDescription personId={personId} />
     </article>
     // <article>
     //   <p className="test">Test: {personId}</p>;
