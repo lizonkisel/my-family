@@ -19,6 +19,7 @@ import {
 import { useAppDispatch } from "../../services/app/hooks";
 import { addMultipleNodes } from "../../services/slices/nodesSlice";
 import { addMultipleEdges } from "../../services/slices/edgesSlice";
+import { setPersons } from "../../services/slices/personsSlice";
 
 // const initialNodes = [
 //   {
@@ -61,6 +62,7 @@ function FlowBoard() {
   const [nodes, setNodes] = useState(initialNodes);
   const [edges, setEdges] = useState(initialEdges);
 
+  dispatch(setPersons(nodesAllData));
   dispatch(addMultipleNodes(nodes));
   dispatch(addMultipleEdges(edges));
 
