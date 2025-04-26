@@ -82,7 +82,7 @@ const createEdges = (nodes: IPersonAllData[]) => {
         }
         const edgesData: INodeEdges = {
           id: `e${node.id}-${connection}`,
-          type: "bezier",
+          type: "default",
           source: `node-${node.id}`,
           target: `node-${connection}`,
           sourceHandle,

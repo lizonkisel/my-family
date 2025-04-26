@@ -21,7 +21,9 @@ export default function CardWrapper() {
     dispatch(setActiveCard(undefined));
   };
 
-  const closePopupByOuterClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const closePopupByOuterClick: React.MouseEventHandler<HTMLDivElement> = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
     if (e.target === e.currentTarget) {
       closePopup();
     }
@@ -33,11 +35,11 @@ export default function CardWrapper() {
     }
   });
 
-  if (activeCard) {
+  if (activeCard !== undefined) {
     return (
-      /* eslint-disable-next-line */
-      <section className="popup" onClick={closePopupByOuterClick}>
-        <div className="popup__content">
+      <section className="popup">
+        {/* eslint-disable-next-line */}
+        <div className="popup__content" onClick={closePopupByOuterClick}>
           <CardPerson personId={activeCard} />;
           <button className="popup__close" type="button" onClick={closePopup}>
             <img src={closeIcon} alt="cross" className="close__img" />
