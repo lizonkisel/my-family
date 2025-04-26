@@ -1,8 +1,27 @@
 .card__description {
   width: 60%;
-  overflow-y: scroll;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  // scrollbar-width: thin;
+  // scrollbar-color: #df711b #e4e4e4;
 
   text-align: justify;
+
+  padding: 0 20px 0 0;
+}
+
+.card__description::-webkit-scrollbar {
+  width: 12px;
+}
+
+.card__description::-webkit-scrollbar-track {
+  background-color: #e4e4e4;
+  border-radius: 100px;
+}
+
+.card__description::-webkit-scrollbar-thumb {
+  background-color: #df711b;
+  border-radius: 100px;
 }
 
 .description__elem {
