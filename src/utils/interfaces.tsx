@@ -58,7 +58,7 @@ interface IGenerationsObj {
 
 interface INodeEdges {
   id: `e${number}-${number}`;
-  type: "straight" | "step" | "smoothstep" | "bezier";
+  type: "straight" | "step" | "smoothstep" | "default" | "simplebezier";
   source: `node-${number}`;
   target: `node-${number}`;
   sourceHandle?: string | null;
