@@ -7,6 +7,8 @@ const useImage = (fileName: any) => {
     "https://avatars.mds.yandex.net/i?id=37ed513bb03f66864517ad250e888088_l-5321228-images-thumbs&n=13"
   );
 
+  console.log(fileName);
+
   useEffect(() => {
     const fetchImage = async () => {
       try {
