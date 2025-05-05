@@ -2,20 +2,20 @@ import React from "react";
 import "./CardPerson.scss";
 import { useAppSelector } from "../../services/app/hooks";
 import { getPerson } from "../../services/slices/personsSlice";
-import useImage from "../../utils/useImage";
+// import useImage from "../../utils/useImage";
 import CardDescription from "../CardDescription/CardDescription";
-// import CardGallery from "../CardGallery/CardGallery";
+import CardGallery from "../CardGallery/CardGallery";
 
 export default function CardPerson({ personId }: { personId: number }) {
   const person = useAppSelector((state) => getPerson(state, personId));
   console.log(person);
 
-  const { image } = useImage(person.main_image);
+  // const { image } = useImage(person.main_image);
   return (
     <article className="card">
       <section className="card__mainInfo">
-        <img className="person__img" src={image} alt="" />
-        {/* <CardGallery person={person} /> */}
+        {/* <img className="person__img" src={image} alt="" /> */}
+        <CardGallery person={person} />
         <div className="person__main">
           <span className="person__surname">{person.surname}</span>
           <span className="person__name">
